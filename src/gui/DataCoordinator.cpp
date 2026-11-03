@@ -4,6 +4,7 @@
 #include "utils/ClinicException.h"
 #include "utils/FileHandler.h"
 
+#include <QCoreApplication>
 #include <QDate>
 #include <QDir>
 #include <QFileDialog>
@@ -23,7 +24,13 @@ DataCoordinator::DataCoordinator(model::ClinicDatabase& database, utils::IDGener
     : QObject(parent), m_database(database), m_ids(ids), m_undo(undo), m_queue(queue), m_cache(cache),
       m_parent(dialogParent), m_path(defaultPath()) {}
 
+// The data file lives in the project's "data" folder when the program is run from the build folder
+// (project/build/SCAPMS), so the saved data stays next to the project. Otherwise it is kept in the
+// per-user application data folder.
 QString DataCoordinator::defaultPath() {
+    const QDir projectData(QCoreApplication::applicationDirPath() + "/../data");
+    if (projectData.exists() && QFileInfo(projectData.absolutePath()).isWritable())
+        return projectData.absoluteFilePath("scapms_data.json");
     return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/scapms_data.json";
 }
 

@@ -69,7 +69,7 @@ void MainWindow::buildMenus() {
     connect(actLoad, &QAction::triggered, this, [this] { m_coordinator->load(); });
 
     auto* actSave = file->addAction(tr("&Save"));
-    actSave->setShortcut(QKeySequence::Save);  // Ctrl+S
+    actSave->setShortcut(QKeySequence("Ctrl+S"));
     connect(actSave, &QAction::triggered, this, [this] { m_coordinator->save(); });
 
     auto* actSaveAs = file->addAction(tr("Save &As..."));
@@ -81,7 +81,7 @@ void MainWindow::buildMenus() {
 
     file->addSeparator();
     auto* actExit = file->addAction(tr("E&xit"));
-    actExit->setShortcut(QKeySequence::Quit);  // Ctrl+Q
+    actExit->setShortcut(QKeySequence("Ctrl+Q"));
     connect(actExit, &QAction::triggered, this, &QWidget::close);
 
     auto* edit = menuBar()->addMenu(tr("&Edit"));
@@ -91,7 +91,7 @@ void MainWindow::buildMenus() {
     connect(m_undoAction, &QAction::triggered, this, &MainWindow::onUndoClicked);
 
     auto* actFind = edit->addAction(tr("&Find"));
-    actFind->setShortcut(QKeySequence::Find);  // Ctrl+F
+    actFind->setShortcut(QKeySequence("Ctrl+F"));
     connect(actFind, &QAction::triggered, this, [this] {
         m_searchBox->setFocus();
         m_searchBox->selectAll();

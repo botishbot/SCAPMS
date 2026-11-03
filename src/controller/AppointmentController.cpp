@@ -116,7 +116,8 @@ void AppointmentController::complete(const std::string& appointmentId, const std
     if (m_onClosed) m_onClosed(appointmentId);
 }
 
-void AppointmentController::remove(const std::string& appointmentId) {
+void AppointmentController::remove(const std::string& appointmentIdArg) {
+    const std::string appointmentId = appointmentIdArg;  // copy: the caller's string may live inside the appointment that is erased below
     PatientRecord* owner = findOwner(appointmentId);
     if (!owner) throw ClinicException(ErrorCode::AppointmentNotFound, "Appointment not found: " + appointmentId);
     auto removed = owner->removePendingAppointment(appointmentId);
