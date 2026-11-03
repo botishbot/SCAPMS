@@ -1,0 +1,656 @@
+{
+  "format": "SCAPMS",
+  "schemaVersion": 4,
+  "note": "Fictional demonstration data only. Load explicitly; never replaces clinic.json automatically.",
+  "idHighWater": "30",
+  "appointmentHighWater": "40",
+  "waitingQueue": [
+    "P-001",
+    "P-004",
+    "P-007",
+    "P-010",
+    "P-013"
+  ],
+  "patients": [
+    {
+      "id": "P-001",
+      "name": "Avery Bennett",
+      "age": 0.25,
+      "email": "demo.patient1@example.com",
+      "phone": "+1 202 555 0100",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-001",
+          "patientId": "P-001",
+          "dateTime": "2026-11-03T09:00",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-002",
+          "patientId": "P-001",
+          "dateTime": "2026-11-03T14:00",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-002",
+      "name": "Jordan Brooks",
+      "age": 4,
+      "email": "demo.patient2@example.com",
+      "phone": "+1 202 555 0101",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Urgent",
+      "appointments": [
+        {
+          "id": "AP-003",
+          "patientId": "P-002",
+          "dateTime": "2026-11-04T09:30",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-003",
+      "name": "Casey Morgan",
+      "age": 12,
+      "email": "demo.patient3@example.com",
+      "phone": "+1 202 555 0102",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-004",
+          "patientId": "P-003",
+          "dateTime": "2026-11-05T09:00",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-004",
+      "name": "Taylor Ellis",
+      "age": 18,
+      "email": "demo.patient4@example.com",
+      "phone": "+1 202 555 0103",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-005",
+          "patientId": "P-004",
+          "dateTime": "2026-11-06T09:30",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-006",
+          "patientId": "P-004",
+          "dateTime": "2026-11-06T14:30",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-005",
+      "name": "Riley Parker",
+      "age": 24,
+      "email": "demo.patient5@example.com",
+      "phone": "+1 202 555 0104",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Critical",
+      "appointments": [
+        {
+          "id": "AP-007",
+          "patientId": "P-005",
+          "dateTime": "2026-11-07T09:00",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-006",
+      "name": "Quinn Foster",
+      "age": 31,
+      "email": "demo.patient6@example.com",
+      "phone": "+1 202 555 0105",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-008",
+          "patientId": "P-006",
+          "dateTime": "2026-11-08T09:30",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-007",
+      "name": "Morgan Reed",
+      "age": 42,
+      "email": "demo.patient7@example.com",
+      "phone": "+1 202 555 0106",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-009",
+          "patientId": "P-007",
+          "dateTime": "2026-11-09T09:00",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-010",
+          "patientId": "P-007",
+          "dateTime": "2026-11-09T14:00",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-008",
+      "name": "Jamie Carter",
+      "age": 55,
+      "email": "demo.patient8@example.com",
+      "phone": "+1 202 555 0107",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Urgent",
+      "appointments": [
+        {
+          "id": "AP-011",
+          "patientId": "P-008",
+          "dateTime": "2026-11-10T09:30",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-009",
+      "name": "Cameron Hayes",
+      "age": 67,
+      "email": "demo.patient9@example.com",
+      "phone": "+1 202 555 0108",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-012",
+          "patientId": "P-009",
+          "dateTime": "2026-11-11T09:00",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-010",
+      "name": "Alex Sullivan",
+      "age": 80,
+      "email": "demo.patient10@example.com",
+      "phone": "+1 202 555 0109",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-013",
+          "patientId": "P-010",
+          "dateTime": "2026-11-12T09:30",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-014",
+          "patientId": "P-010",
+          "dateTime": "2026-11-12T14:30",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-011",
+      "name": "Drew Collins",
+      "age": 0.25,
+      "email": "demo.patient11@example.com",
+      "phone": "+1 202 555 0110",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Critical",
+      "appointments": [
+        {
+          "id": "AP-015",
+          "patientId": "P-011",
+          "dateTime": "2026-11-13T09:00",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-012",
+      "name": "Reese Walker",
+      "age": 4,
+      "email": "demo.patient12@example.com",
+      "phone": "+1 202 555 0111",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-016",
+          "patientId": "P-012",
+          "dateTime": "2026-11-14T09:30",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-013",
+      "name": "Skyler James",
+      "age": 12,
+      "email": "demo.patient13@example.com",
+      "phone": "+1 202 555 0112",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-017",
+          "patientId": "P-013",
+          "dateTime": "2026-11-15T09:00",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-018",
+          "patientId": "P-013",
+          "dateTime": "2026-11-15T14:00",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-014",
+      "name": "Rowan Hughes",
+      "age": 18,
+      "email": "demo.patient14@example.com",
+      "phone": "+1 202 555 0113",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Urgent",
+      "appointments": [
+        {
+          "id": "AP-019",
+          "patientId": "P-014",
+          "dateTime": "2026-11-16T09:30",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-015",
+      "name": "Emery Scott",
+      "age": 24,
+      "email": "demo.patient15@example.com",
+      "phone": "+1 202 555 0114",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-020",
+          "patientId": "P-015",
+          "dateTime": "2026-11-03T09:00",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-016",
+      "name": "Finley Davis",
+      "age": 31,
+      "email": "demo.patient16@example.com",
+      "phone": "+1 202 555 0115",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-021",
+          "patientId": "P-016",
+          "dateTime": "2026-11-04T09:30",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-022",
+          "patientId": "P-016",
+          "dateTime": "2026-11-04T14:30",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-017",
+      "name": "Harper Lane",
+      "age": 42,
+      "email": "demo.patient17@example.com",
+      "phone": "+1 202 555 0116",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Critical",
+      "appointments": [
+        {
+          "id": "AP-023",
+          "patientId": "P-017",
+          "dateTime": "2026-11-05T09:00",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-018",
+      "name": "Logan Miles",
+      "age": 55,
+      "email": "demo.patient18@example.com",
+      "phone": "+1 202 555 0117",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-024",
+          "patientId": "P-018",
+          "dateTime": "2026-11-06T09:30",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-019",
+      "name": "Peyton Cole",
+      "age": 67,
+      "email": "demo.patient19@example.com",
+      "phone": "+1 202 555 0118",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-025",
+          "patientId": "P-019",
+          "dateTime": "2026-11-07T09:00",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-026",
+          "patientId": "P-019",
+          "dateTime": "2026-11-07T14:00",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-020",
+      "name": "Kendall Gray",
+      "age": 80,
+      "email": "demo.patient20@example.com",
+      "phone": "+1 202 555 0119",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Urgent",
+      "appointments": [
+        {
+          "id": "AP-027",
+          "patientId": "P-020",
+          "dateTime": "2026-11-08T09:30",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-021",
+      "name": "Blake Turner",
+      "age": 0.25,
+      "email": "demo.patient21@example.com",
+      "phone": "+1 202 555 0120",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-028",
+          "patientId": "P-021",
+          "dateTime": "2026-11-09T09:00",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-022",
+      "name": "Sage Wilson",
+      "age": 4,
+      "email": "demo.patient22@example.com",
+      "phone": "+1 202 555 0121",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-029",
+          "patientId": "P-022",
+          "dateTime": "2026-11-10T09:30",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-030",
+          "patientId": "P-022",
+          "dateTime": "2026-11-10T14:30",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-023",
+      "name": "Dakota Moore",
+      "age": 12,
+      "email": "demo.patient23@example.com",
+      "phone": "+1 202 555 0122",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Critical",
+      "appointments": [
+        {
+          "id": "AP-031",
+          "patientId": "P-023",
+          "dateTime": "2026-11-11T09:00",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-024",
+      "name": "Charlie Dean",
+      "age": 18,
+      "email": "demo.patient24@example.com",
+      "phone": "+1 202 555 0123",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-032",
+          "patientId": "P-024",
+          "dateTime": "2026-11-12T09:30",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-025",
+      "name": "Sydney Wells",
+      "age": 24,
+      "email": "demo.patient25@example.com",
+      "phone": "+1 202 555 0124",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-033",
+          "patientId": "P-025",
+          "dateTime": "2026-11-13T09:00",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-034",
+          "patientId": "P-025",
+          "dateTime": "2026-11-13T14:00",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-026",
+      "name": "Robin Price",
+      "age": 31,
+      "email": "demo.patient26@example.com",
+      "phone": "+1 202 555 0125",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Urgent",
+      "appointments": [
+        {
+          "id": "AP-035",
+          "patientId": "P-026",
+          "dateTime": "2026-11-14T09:30",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-027",
+      "name": "Jesse Hart",
+      "age": 42,
+      "email": "demo.patient27@example.com",
+      "phone": "+1 202 555 0126",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-036",
+          "patientId": "P-027",
+          "dateTime": "2026-11-15T09:00",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    },
+    {
+      "id": "P-028",
+      "name": "Marley Clark",
+      "age": 55,
+      "email": "demo.patient28@example.com",
+      "phone": "+1 202 555 0127",
+      "legacyContact": "",
+      "category": "General",
+      "detail": "",
+      "appointments": [
+        {
+          "id": "AP-037",
+          "patientId": "P-028",
+          "dateTime": "2026-11-16T09:30",
+          "service": "Routine consultation",
+          "status": "Pending"
+        },
+        {
+          "id": "AP-038",
+          "patientId": "P-028",
+          "dateTime": "2026-11-16T14:30",
+          "service": "Follow-up review",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-029",
+      "name": "Adrian Bell",
+      "age": 67,
+      "email": "demo.patient29@example.com",
+      "phone": "+1 202 555 0128",
+      "legacyContact": "",
+      "category": "Emergency",
+      "detail": "Critical",
+      "appointments": [
+        {
+          "id": "AP-039",
+          "patientId": "P-029",
+          "dateTime": "2026-11-03T09:00",
+          "service": "Urgent assessment",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": "P-030",
+      "name": "Sam Rivera",
+      "age": 80,
+      "email": "demo.patient30@example.com",
+      "phone": "+1 202 555 0129",
+      "legacyContact": "",
+      "category": "Follow-Up",
+      "detail": "Routine review of previous consultation",
+      "appointments": [
+        {
+          "id": "AP-040",
+          "patientId": "P-030",
+          "dateTime": "2026-11-04T09:30",
+          "service": "Scheduled review",
+          "status": "Cancelled"
+        }
+      ]
+    }
+  ]
+}

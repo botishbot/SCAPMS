@@ -1,0 +1,11 @@
+Patient ID,Name,Age,Category,Priority,Phone,Email,Details,Appointments,Completed,Pending
+P-0001,Amara Okafor,34,General,Normal,0803 555 0101,amara.okafor@example.com,Routine patient,4,3,1
+P-0002,Tunde Bakare,8,Emergency,High Priority,0803 555 0102,,Triage level 1 (Critical),2,2,0
+P-0003,Ngozi Eze,52,Follow-Up,Scheduled,0803 555 0103,,Previous visit 2026-10-13 - Blood pressure review,3,2,1
+P-0004,Ibrahim Musa,67,General,Normal,0803 555 0104,,Routine patient,3,2,1
+P-0005,Folake Adeyemi,29,General,Normal,,folake.adeyemi@example.com,Routine patient,2,0,1
+P-0006,Chinedu Nwosu,41,Emergency,High Priority,0803 555 0106,,Triage level 2 (Urgent),1,0,1
+P-0007,Zainab Lawal,5,General,Normal,0803 555 0107,,Routine patient,1,0,1
+P-0008,Emeka Obi,58,Follow-Up,Scheduled,0803 555 0108,,Previous visit 2026-10-24 - Diabetes follow-up,2,1,1
+P-0009,Halima Sani,23,General,Normal,0803 555 0109,halima.sani@example.com,Routine patient,2,0,1
+P-0010,Segun Ajayi,36,Follow-Up,Scheduled,0803 555 0110,,Previous visit 2026-10-03 - Post-treatment check,2,1,1

@@ -1,0 +1,68 @@
+/* SCAPMS theme: one accent colour, semantic status colours, 8px spacing grid */
+QMainWindow, QWidget#Content { background: #F4F7F9; }
+QWidget { font-size: 14px; color: #1F2A33; }
+
+QListWidget#Sidebar { background: #12343B; border: none; padding: 8px 0; outline: 0; }
+QListWidget#Sidebar::item { color: #CFE3E6; padding: 12px 20px; margin: 2px 8px; border-radius: 6px; }
+QListWidget#Sidebar::item:hover { background: #1B4A53; }
+QListWidget#Sidebar::item:selected { background: #1F8A94; color: #FFFFFF; }
+QLabel#AppTitle { background: #12343B; color: #FFFFFF; font-size: 18px; font-weight: 600; padding: 18px 20px 8px 20px; }
+QLabel#AppSubtitle { background: #12343B; color: #8FB4BA; font-size: 12px; padding: 0 20px 12px 20px; }
+
+QFrame#TopBar { background: #FFFFFF; border-bottom: 1px solid #DCE4E8; }
+QLineEdit { background: #FFFFFF; border: 1px solid #C5D1D7; border-radius: 6px; padding: 6px 10px; }
+QLineEdit:focus { border: 1px solid #1F8A94; }
+QPushButton { background: #FFFFFF; border: 1px solid #C5D1D7; border-radius: 6px; padding: 7px 14px; }
+QPushButton:hover { background: #EAF3F4; }
+QPushButton:disabled { color: #9AA8B0; background: #F0F3F5; }
+QPushButton#Primary { background: #1F8A94; color: #FFFFFF; border: 1px solid #1F8A94; }
+QPushButton#Primary:hover { background: #197780; }
+
+QFrame#Card { background: #FFFFFF; border: 1px solid #DCE4E8; border-radius: 10px; }
+QLabel#CardValue { font-size: 30px; font-weight: 700; color: #12343B; }
+QLabel#CardLabel { font-size: 12px; color: #5B6B75; }
+QLabel#PageTitle { font-size: 22px; font-weight: 600; color: #12343B; }
+QLabel#Muted { color: #5B6B75; }
+
+QStatusBar { background: #FFFFFF; border-top: 1px solid #DCE4E8; }
+QToolTip { background: #12343B; color: #FFFFFF; border: none; padding: 4px 8px; }
+
+/* Forms, tables, dialogs */
+QLabel#SectionTitle { font-size: 16px; font-weight: 600; color: #12343B; }
+QLabel#ErrorLabel { color: #B42318; background: #FEF3F2; border: 1px solid #FDA29B; border-radius: 6px; padding: 8px 10px; }
+QComboBox, QDateEdit { background: #FFFFFF; border: 1px solid #C5D1D7; border-radius: 6px; padding: 5px 10px; }
+QComboBox:focus, QDateEdit:focus { border: 1px solid #1F8A94; }
+QComboBox:disabled { color: #6B7A84; background: #EEF2F4; }
+QPushButton#Danger { color: #B42318; border: 1px solid #F0B4AE; }
+QPushButton#Danger:hover { background: #FEF3F2; }
+QPushButton#Danger:disabled { color: #B9C3C9; border: 1px solid #DCE4E8; }
+QTableWidget { background: #FFFFFF; border: 1px solid #DCE4E8; border-radius: 8px; gridline-color: #EEF2F4; selection-background-color: #CDEBEE; selection-color: #12343B; }
+QHeaderView::section { background: #F4F7F9; color: #3C4A53; border: none; border-bottom: 1px solid #DCE4E8; padding: 8px 10px; font-weight: 600; }
+
+QDateTimeEdit { background: #FFFFFF; border: 1px solid #C5D1D7; border-radius: 6px; padding: 5px 10px; }
+QDateTimeEdit:focus { border: 1px solid #1F8A94; }
+QDialog { background: #F4F7F9; }
+QLabel#HintLabel { color: #93370D; background: #FEF0C7; border: 1px solid #F5D78A; border-radius: 6px; padding: 8px 10px; }
+QFrame#Divider { color: #DCE4E8; background: #DCE4E8; max-height: 1px; border: none; }
+
+QLabel#ServingName { font-size: 22px; font-weight: 700; color: #12343B; }
+
+/* disabled primary buttons must look disabled (the #Primary rule is more specific than :disabled) */
+QPushButton#Primary:disabled { background: #B7D6D9; border: 1px solid #B7D6D9; color: #F4F7F9; }
+
+/* dashboard panels, info labels, progress bars */
+QListWidget[panel="true"] { background: transparent; border: none; outline: 0; }
+QListWidget[panel="true"]::item { padding: 6px 2px; border-bottom: 1px solid #EEF2F4; color: #1F2A33; }
+QListWidget[panel="true"]::item:disabled { color: #8A97A0; border-bottom: none; }
+QLabel#InfoLabel { color: #12343B; background: #E6F4F5; border: 1px solid #BFE0E3; border-radius: 6px; padding: 8px 10px; }
+QProgressBar { background: #E8EEF1; border: none; border-radius: 6px; }
+QProgressBar::chunk { background: #1F8A94; border-radius: 6px; }
+QProgressBar#BarEmergency::chunk { background: #D92D20; }
+QProgressBar#BarFollowUp::chunk { background: #2970FF; }
+QScrollArea { background: transparent; }
+
+/* reports and admin */
+QLabel[big="true"] { font-size: 28px; font-weight: 700; color: #12343B; }
+QLabel#FilePathLabel { color: #3C4A53; }
+
+QLabel#SmallNote { color: #5B6B75; font-size: 12px; }

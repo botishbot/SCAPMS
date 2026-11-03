@@ -1,0 +1,340 @@
+{
+    "format": "SCAPMS",
+    "history": [
+    ],
+    "patients": [
+        {
+            "age": 34,
+            "appointments": [
+                {
+                    "dateTime": "2026-09-28 09:00",
+                    "id": "A-0001",
+                    "outcomeNote": "Healthy",
+                    "reason": "Check-up",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-10-14 10:30",
+                    "id": "A-0002",
+                    "outcomeNote": "Results normal",
+                    "reason": "Blood work",
+                    "serviceId": "S-002",
+                    "serviceName": "Laboratory Test",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-10-21 11:00",
+                    "id": "A-0003",
+                    "outcomeNote": "Advised rest",
+                    "reason": "Review",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-11-07 14:30",
+                    "id": "A-0021",
+                    "outcomeNote": "",
+                    "reason": "Routine check",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "amara.okafor@example.com",
+            "id": "P-0001",
+            "name": "Amara Okafor",
+            "phone": "0803 555 0101"
+        },
+        {
+            "age": 8,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-25 07:45",
+                    "id": "A-0008",
+                    "outcomeNote": "Treated and discharged",
+                    "reason": "High fever",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-10-28 08:00",
+                    "id": "A-0013",
+                    "outcomeNote": "Healing well",
+                    "reason": "Follow-up scan",
+                    "serviceId": "S-003",
+                    "serviceName": "X-Ray",
+                    "status": "Completed"
+                }
+            ],
+            "category": "Emergency",
+            "email": "",
+            "id": "P-0002",
+            "name": "Tunde Bakare",
+            "phone": "0803 555 0102",
+            "triageLevel": 1
+        },
+        {
+            "age": 52,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-08 10:00",
+                    "id": "A-0006",
+                    "outcomeNote": "Medication adjusted",
+                    "reason": "Blood pressure",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-10-20 10:00",
+                    "id": "A-0007",
+                    "outcomeNote": "",
+                    "reason": "Medication review",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-10-31 10:00",
+                    "id": "A-0018",
+                    "outcomeNote": "",
+                    "reason": "Blood pressure review",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "",
+            "followUpReason": "Blood pressure review",
+            "id": "P-0003",
+            "name": "Ngozi Eze",
+            "phone": "0803 555 0103",
+            "previousVisitDate": "2026-10-08"
+        },
+        {
+            "age": 67,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-07 08:30",
+                    "id": "A-0004",
+                    "outcomeNote": "Referred for tests",
+                    "reason": "Chest pain",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-10-18 09:15",
+                    "id": "A-0005",
+                    "outcomeNote": "Clear",
+                    "reason": "Chest X-ray",
+                    "serviceId": "S-003",
+                    "serviceName": "X-Ray",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-11-04 11:30",
+                    "id": "A-0020",
+                    "outcomeNote": "",
+                    "reason": "Medication refill",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "",
+            "id": "P-0004",
+            "name": "Ibrahim Musa",
+            "phone": "0803 555 0104"
+        },
+        {
+            "age": 29,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-23 15:30",
+                    "id": "A-0011",
+                    "outcomeNote": "",
+                    "reason": "Check-up",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Cancelled"
+                },
+                {
+                    "dateTime": "2026-10-30 10:00",
+                    "id": "A-0017",
+                    "outcomeNote": "",
+                    "reason": "Check-up",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "folake.adeyemi@example.com",
+            "id": "P-0005",
+            "name": "Folake Adeyemi",
+            "phone": ""
+        },
+        {
+            "age": 41,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-28 11:00",
+                    "id": "A-0015",
+                    "outcomeNote": "",
+                    "reason": "Injury",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "Emergency",
+            "email": "",
+            "id": "P-0006",
+            "name": "Chinedu Nwosu",
+            "phone": "0803 555 0106",
+            "triageLevel": 2
+        },
+        {
+            "age": 5,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-28 09:30",
+                    "id": "A-0014",
+                    "outcomeNote": "",
+                    "reason": "Fever and cough",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "",
+            "id": "P-0007",
+            "name": "Zainab Lawal",
+            "phone": "0803 555 0107"
+        },
+        {
+            "age": 58,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-19 13:00",
+                    "id": "A-0010",
+                    "outcomeNote": "",
+                    "reason": "Sugar level test",
+                    "serviceId": "S-002",
+                    "serviceName": "Laboratory Test",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-11-02 09:00",
+                    "id": "A-0019",
+                    "outcomeNote": "",
+                    "reason": "Diabetes follow-up",
+                    "serviceId": "S-002",
+                    "serviceName": "Laboratory Test",
+                    "status": "Pending"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "",
+            "followUpReason": "Diabetes follow-up",
+            "id": "P-0008",
+            "name": "Emeka Obi",
+            "phone": "0803 555 0108",
+            "previousVisitDate": "2026-10-19"
+        },
+        {
+            "age": 23,
+            "appointments": [
+                {
+                    "dateTime": "2026-10-24 12:00",
+                    "id": "A-0012",
+                    "outcomeNote": "",
+                    "reason": "Consultation",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Cancelled"
+                },
+                {
+                    "dateTime": "2026-10-28 15:00",
+                    "id": "A-0016",
+                    "outcomeNote": "",
+                    "reason": "Lab test",
+                    "serviceId": "S-002",
+                    "serviceName": "Laboratory Test",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "halima.sani@example.com",
+            "id": "P-0009",
+            "name": "Halima Sani",
+            "phone": "0803 555 0109"
+        },
+        {
+            "age": 36,
+            "appointments": [
+                {
+                    "dateTime": "2026-09-28 14:00",
+                    "id": "A-0009",
+                    "outcomeNote": "Completed",
+                    "reason": "Treatment",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                },
+                {
+                    "dateTime": "2026-11-09 16:00",
+                    "id": "A-0022",
+                    "outcomeNote": "",
+                    "reason": "Final scan",
+                    "serviceId": "S-003",
+                    "serviceName": "X-Ray",
+                    "status": "Pending"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "",
+            "followUpReason": "Post-treatment check",
+            "id": "P-0010",
+            "name": "Segun Ajayi",
+            "phone": "0803 555 0110",
+            "previousVisitDate": "2026-09-28"
+        }
+    ],
+    "schemaVersion": 1,
+    "services": [
+        {
+            "active": true,
+            "description": "Routine consultation with a doctor",
+            "id": "S-001",
+            "name": "General Consultation"
+        },
+        {
+            "active": true,
+            "description": "Blood and urine tests",
+            "id": "S-002",
+            "name": "Laboratory Test"
+        },
+        {
+            "active": true,
+            "description": "Radiology imaging",
+            "id": "S-003",
+            "name": "X-Ray"
+        },
+        {
+            "active": true,
+            "description": "Medication review and refill",
+            "id": "S-004",
+            "name": "Pharmacy Review"
+        }
+    ]
+}

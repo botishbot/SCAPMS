@@ -1,0 +1,2 @@
+/usr/bin/ar qc libscapms_io.a CMakeFiles/scapms_io.dir/scapms_io_autogen/mocs_compilation.cpp.o CMakeFiles/scapms_io.dir/src/utils/FileHandler.cpp.o
+/usr/bin/ranlib libscapms_io.a
