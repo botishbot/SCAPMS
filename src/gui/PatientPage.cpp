@@ -217,6 +217,16 @@ void PatientPage::refresh() {
     updateButtons();
 }
 
+void PatientPage::selectPatient(const QString& patientId) {
+    for (int r = 0; r < m_table->rowCount(); ++r) {
+        if (m_table->item(r, ColId)->data(Qt::UserRole).toString() == patientId) {
+            m_table->scrollToItem(m_table->item(r, ColId));
+            if (m_editingId != patientId) m_table->selectRow(r);  // loads the form through onSelectionChanged
+            return;
+        }
+    }
+}
+
 void PatientPage::fillTable() {
     const auto& list = m_manager.patients();
     m_table->blockSignals(true);

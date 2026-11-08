@@ -202,6 +202,16 @@ void MainWindow::buildContent() {
             [this](const QString& text) { statusBar()->showMessage(text, 6000); });
 
     connect(m_searchPage, &SearchPage::patientViewed, this, &MainWindow::onPatientViewed);
+    // actions on a search result: go to the page where the action is done, with the patient already selected
+    connect(m_searchPage, &SearchPage::openPatientRequested, this, [this](const QString& id) {
+        m_sidebar->setCurrentRow(1);
+        m_patientPage->selectPatient(id);
+    });
+    connect(m_searchPage, &SearchPage::openAppointmentsRequested, this, [this](const QString& id) {
+        m_sidebar->setCurrentRow(2);
+        m_appointmentPage->showPatient(id);
+    });
+    connect(m_searchPage, &SearchPage::addToQueueRequested, this, &MainWindow::onAddToQueueRequested);
     connect(m_patientPage, &PatientPage::patientViewed, this, &MainWindow::onPatientViewed);
     connect(m_searchPage, &SearchPage::statusMessage, this,
             [this](const QString& text) { statusBar()->showMessage(text, 5000); });
@@ -290,6 +300,29 @@ void MainWindow::refreshAll() {
     m_reportPage->refresh();
     refreshAdmin();
     refreshDashboard();
+}
+
+void MainWindow::onAddToQueueRequested(const QString& patientId) {
+    QString message;
+    try {
+        const auto& patient = m_manager.getPatient(patientId.toStdString());
+        const model::Appointment* next = nullptr;  // the earliest pending appointment
+        for (const auto& a : patient.appointments())
+            if (a.status() == model::AppointmentStatus::Pending && (!next || a.dateTime() < next->dateTime())) next = &a;
+        if (!next)
+            throw scapms::utils::ClinicException(scapms::utils::ErrorCode::InvalidQueue,
+                                                 patient.name() + " has no pending appointment. Schedule one first on the Appointments page.");
+        m_queue.join(next->id(), QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm").toStdString());
+        m_queuePage->refresh();
+        refreshDashboard();
+        statusBar()->showMessage(tr("%1 was added to the waiting queue").arg(QString::fromUtf8(patient.name().c_str())), 5000);
+        return;
+    } catch (const scapms::utils::ClinicException& e) {
+        message = QString::fromUtf8(e.what());
+    } catch (...) {
+        message = tr("An unexpected error occurred. Nothing was changed.");
+    }
+    QMessageBox::warning(this, tr("Cannot add to the queue"), message);
 }
 
 void MainWindow::onPatientViewed(const QString& patientId) {

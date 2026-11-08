@@ -92,6 +92,35 @@ void SearchPage::buildUi() {
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &SearchPage::onSelectionChanged);
     left->addWidget(m_table, 1);
 
+    // details of the selected patient with the actions that can be done on them
+    auto* detail = new QFrame(this);
+    detail->setObjectName("Card");
+    auto* detailLay = new QVBoxLayout(detail);
+    detailLay->setContentsMargins(16, 12, 16, 12);
+    detailLay->setSpacing(8);
+    m_selectedInfo = new QLabel(detail);
+    m_selectedInfo->setObjectName("SelectedPatientInfo");
+    m_selectedInfo->setTextFormat(Qt::RichText);
+    m_selectedInfo->setWordWrap(true);
+    auto* actions = new QHBoxLayout();
+    m_openBtn = new QPushButton(tr("Open patient record"), detail);
+    m_openBtn->setToolTip(tr("Show this patient on the Patients page to edit or delete them (also: double-click a row)"));
+    m_appointmentsBtn = new QPushButton(tr("Appointments..."), detail);
+    m_appointmentsBtn->setToolTip(tr("Show this patient's appointments to schedule, cancel, complete or remove them"));
+    m_queueBtn = new QPushButton(tr("Add to queue"), detail);
+    m_queueBtn->setToolTip(tr("Put this patient in the waiting queue for their next pending appointment"));
+    actions->addWidget(m_openBtn);
+    actions->addWidget(m_appointmentsBtn);
+    actions->addWidget(m_queueBtn);
+    actions->addStretch(1);
+    detailLay->addWidget(m_selectedInfo);
+    detailLay->addLayout(actions);
+    left->addWidget(detail);
+    connect(m_openBtn, &QPushButton::clicked, this, [this] { if (!m_selectedId.isEmpty()) emit openPatientRequested(m_selectedId); });
+    connect(m_appointmentsBtn, &QPushButton::clicked, this, [this] { if (!m_selectedId.isEmpty()) emit openAppointmentsRequested(m_selectedId); });
+    connect(m_queueBtn, &QPushButton::clicked, this, [this] { if (!m_selectedId.isEmpty()) emit addToQueueRequested(m_selectedId); });
+    connect(m_table, &QTableWidget::cellDoubleClicked, this, [this](int, int) { if (!m_selectedId.isEmpty()) emit openPatientRequested(m_selectedId); });
+
     m_statusLine = new QLabel(this);
     m_statusLine->setObjectName("Muted");
     m_statusLine->setWordWrap(true);
@@ -122,7 +151,7 @@ void SearchPage::buildUi() {
     m_keyword->setObjectName("SearchKeywordEdit");
     m_keyword->setPlaceholderText(tr("Type to search..."));
     m_keyword->setClearButtonEnabled(true);
-    m_keyword->setToolTip(tr("Names match from the start (\"ad\" finds \"Ada Obi\"). Case does not matter."));
+    m_keyword->setToolTip(tr("A name matches anywhere in the name (\"eze\" finds \"Ngozi Eze\"). An ID can be typed as P-0003, p3 or 3. Case does not matter."));
     m_category = new QComboBox(card);
     m_category->setObjectName("SearchCategoryCombo");
     m_category->addItems({tr("General"), tr("Emergency"), tr("Follow-Up")});
@@ -305,6 +334,17 @@ void SearchPage::fillTable() {
         put(ColAppointments, QString::number(p.appointments().size()), false, true);
     }
     m_table->blockSignals(false);
+    int keep = -1;
+    for (int r = 0; r < m_table->rowCount(); ++r)
+        if (m_table->item(r, ColId)->data(Qt::UserRole).toString() == m_selectedId) keep = r;
+    if (keep >= 0) {
+        m_table->blockSignals(true);
+        m_table->selectRow(keep);
+        m_table->blockSignals(false);
+    } else {
+        m_selectedId.clear();
+    }
+    updateSelectedPatient();
     updateStatusLine();
 }
 
@@ -324,8 +364,52 @@ void SearchPage::updateStatusLine() {
 
 void SearchPage::onSelectionChanged() {
     const auto rows = m_table->selectionModel()->selectedRows();
-    if (rows.isEmpty()) return;
-    emit patientViewed(m_table->item(rows.first().row(), ColId)->data(Qt::UserRole).toString());
+    if (rows.isEmpty()) {
+        m_selectedId.clear();
+    } else {
+        m_selectedId = m_table->item(rows.first().row(), ColId)->data(Qt::UserRole).toString();
+        emit patientViewed(m_selectedId);
+    }
+    updateSelectedPatient();
+}
+
+void SearchPage::updateSelectedPatient() {
+    const bool has = !m_selectedId.isEmpty();
+    m_openBtn->setEnabled(has);
+    m_appointmentsBtn->setEnabled(has);
+    m_queueBtn->setEnabled(has);
+    if (!has) {
+        m_selectedInfo->setText(tr("Select a patient in the table to open their record, see or cancel their appointments, or add them to the queue."));
+        return;
+    }
+    try {
+        const PatientRecord& p = m_patients.getPatient(m_selectedId.toStdString());  // base-class reference
+        int pending = 0, completed = 0, cancelled = 0;
+        std::string next;
+        for (const auto& a : p.appointments()) {
+            switch (a.status()) {
+                case model::AppointmentStatus::Pending:
+                    ++pending;
+                    if (next.empty() || a.dateTime() < next) next = a.dateTime();
+                    break;
+                case model::AppointmentStatus::Completed: ++completed; break;
+                case model::AppointmentStatus::Cancelled: ++cancelled; break;
+            }
+        }
+        QString appointments = tr("%1 appointment(s): %2 pending, %3 completed, %4 cancelled")
+                                   .arg(p.appointments().size()).arg(pending).arg(completed).arg(cancelled);
+        if (pending > 0) appointments += tr(". Next: %1").arg(q(next));
+        m_selectedInfo->setText(QString("<b>%1</b> (%2) - %3, %4<br>Age %5 | %6 | %7<br>%8")
+                                    .arg(q(p.name()).toHtmlEscaped(), q(p.id()), q(p.categoryName()), q(p.priorityLabel()))
+                                    .arg(p.age())
+                                    .arg(q(p.contactSummary()).toHtmlEscaped(), q(p.summary()).toHtmlEscaped(), appointments));
+    } catch (const ClinicException&) {
+        m_selectedId.clear();
+        m_selectedInfo->setText(tr("Select a patient in the table."));
+        m_openBtn->setEnabled(false);
+        m_appointmentsBtn->setEnabled(false);
+        m_queueBtn->setEnabled(false);
+    }
 }
 
 // ---------------------------------------------------------------- search
@@ -393,8 +477,8 @@ void SearchPage::performSearch(bool interactive) {
 void SearchPage::quickSearch(const QString& text) {
     const QString t = text.trimmed();
     if (t.isEmpty()) { onClearClicked(); return; }
-    // an ID like "p-3" or "P-0003" searches by ID, anything else by name
-    const bool looksLikeId = QRegularExpression("^[pP]-?\\d").match(t).hasMatch();
+    // a number such as "3", "p3" or "P-0003" searches by ID, anything else by name
+    const bool looksLikeId = QRegularExpression("^([pP]-?)?\\d+$").match(t).hasMatch();
     m_searchField->setCurrentIndex(m_searchField->findData(static_cast<int>(looksLikeId ? SearchField::Id : SearchField::Name)));
     m_keyword->setText(t);
 }

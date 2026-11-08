@@ -9,6 +9,11 @@ std::string collapseSpaces(const std::string& s);  // trim + single inner spaces
 std::string toLower(const std::string& s);          // ASCII lower-case copy
 std::string normalizedName(const std::string& name);  // collapseSpaces + toLower: the key used to sort and search names
 bool startsWith(const std::string& text, const std::string& prefix);  // plain character-by-character check
+bool contains(const std::string& text, const std::string& needle);    // true if needle occurs anywhere in text (empty needle: true)
+
+// Turns a typed patient ID into the stored form (lower case): "3", "p3", "P-3" and "p-0003" all become "p-0003".
+// Text that is not a plain number is only lower-cased.
+std::string normalizedIdKey(const std::string& text);
 
 // Date/time format used everywhere in the model: "YYYY-MM-DD" and "YYYY-MM-DD HH:MM".
 // ISO order means plain string comparison is also chronological comparison.

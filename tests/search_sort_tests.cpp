@@ -87,6 +87,24 @@ static void testStringHelpers() {
     CHECK(v::startsWith("ada", ""));
     CHECK(!v::startsWith("ad", "ada"));
     CHECK(!v::startsWith("bada", "ada"));
+
+    CHECK(v::contains("emeka obi", "obi"));
+    CHECK(v::contains("emeka obi", "e"));
+    CHECK(v::contains("emeka obi", "emeka obi"));
+    CHECK(v::contains("abc", ""));
+    CHECK(!v::contains("abc", "abcd"));
+    CHECK(!v::contains("abc", "ac"));
+    CHECK(v::contains("aab", "ab"));                 // the match may start after a partial match
+
+    CHECK_EQ(v::normalizedIdKey("3"), std::string("p-0003"));
+    CHECK_EQ(v::normalizedIdKey("0003"), std::string("p-0003"));
+    CHECK_EQ(v::normalizedIdKey("p3"), std::string("p-0003"));
+    CHECK_EQ(v::normalizedIdKey(" P-3 "), std::string("p-0003"));
+    CHECK_EQ(v::normalizedIdKey("P-0123"), std::string("p-0123"));
+    CHECK_EQ(v::normalizedIdKey("P-12345"), std::string("p-12345"));
+    CHECK_EQ(v::normalizedIdKey("abc"), std::string("abc"));
+    CHECK_EQ(v::normalizedIdKey("P-1a"), std::string("p-1a"));
+    CHECK_EQ(v::normalizedIdKey(""), std::string(""));
 }
 
 static void testSortsMatchReference() {
@@ -174,13 +192,27 @@ static void testLinearSearch() {
     CHECK(miss.matches.empty());
     CHECK_EQ(miss.comparisons, 12L);                                           // had to look at everyone
 
-    auto byName = SearchEngine::linearSearch(l, SearchField::Name, "  ADA ");  // prefix, any case, trimmed
-    CHECK_EQ(byName.matches.size(), std::size_t(2));                           // Ada Obi and ADA Obi ("adebayo" starts "ade")
+    auto byName = SearchEngine::linearSearch(l, SearchField::Name, "  ADA ");  // any case, trimmed
+    CHECK_EQ(byName.matches.size(), std::size_t(2));                           // Ada Obi and ADA Obi
     CHECK_EQ(byName.matches[0]->id(), std::string("P-0001"));
     CHECK_EQ(byName.matches[1]->id(), std::string("P-0011"));
-    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "ade").matches.size(), std::size_t(1));   // only "adebayo Ade"
     CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "ife a").matches.size(), std::size_t(1));  // spaces collapsed
-    CHECK(SearchEngine::linearSearch(l, SearchField::Name, "obi").matches.empty());  // matches the start of the name only
+
+    // a name is matched anywhere, so the surname or a single letter can be typed
+    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "obi").matches.size(), std::size_t(2));    // Ada Obi, ADA Obi
+    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "EZE").matches.size(), std::size_t(1));    // Chi Eze
+    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "ade").matches.size(), std::size_t(3));    // adebayo Ade, Bayo Ade, Funmi Alade
+    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "z").matches.size(), std::size_t(2));      // Chi Eze, Zainab Yusuf
+    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "o").matches.size(), std::size_t(7));
+    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "yusuf").matches[0]->id(), std::string("P-0012"));
+    CHECK(SearchEngine::linearSearch(l, SearchField::Name, "nobody").matches.empty());
+    CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Name, "o").comparisons, 12L);   // a name search checks every patient
+
+    // an ID can be typed in short forms
+    for (const char* key : {"3", "p3", "P-3", "0003", "p-0003", " P-0003 "})
+        CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Id, key).matches.size(), std::size_t(1));
+    CHECK(SearchEngine::linearSearch(l, SearchField::Id, "99").matches.empty());
+    CHECK(SearchEngine::linearSearch(l, SearchField::Id, "0").matches.empty());
 
     CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Category, "emergency").matches.size(), std::size_t(2));
     CHECK_EQ(SearchEngine::linearSearch(l, SearchField::Category, "Follow-Up").matches.size(), std::size_t(2));
@@ -217,21 +249,12 @@ static void testBinarySearch() {
     Fixture f; f.fillSample();
     PatientList l = f.list();
 
-    // not sorted -> refused
-    CHECK_THROWS(SearchEngine::binarySearch(l, SearchField::Name, "ada", std::nullopt), InvalidSearch);
-    CHECK_THROWS(SearchEngine::binarySearch(l, SearchField::Name, "ada", SortField::Age), InvalidSearch);   // sorted by something else
+    // only an exact key (the patient ID) can use Binary Search
+    CHECK_THROWS(SearchEngine::binarySearch(l, SearchField::Name, "ada", SortField::Name), InvalidSearch);
     CHECK_THROWS(SearchEngine::binarySearch(l, SearchField::Category, "emergency", SortField::Name), InvalidSearch);
+    CHECK_THROWS(SearchEngine::binarySearch(l, SearchField::Id, "P-0001", std::nullopt), InvalidSearch);   // not sorted
+    CHECK_THROWS(SearchEngine::binarySearch(l, SearchField::Id, "P-0001", SortField::Name), InvalidSearch);  // sorted by something else
 
-    SortEngine::insertionSort(l, SortField::Name);
-    for (const char* key : {"ada", "a", "b", "z", "ife a", "zz", "adebayo ade", "0", "d"}) {
-        auto bin = SearchEngine::binarySearch(l, SearchField::Name, key, SortField::Name);
-        auto lin = SearchEngine::linearSearch(l, SearchField::Name, key);
-        CHECK(ids(PatientList(bin.matches.begin(), bin.matches.end())) == ids(PatientList(lin.matches.begin(), lin.matches.end())));
-        CHECK(bin.algorithm == SearchAlgorithm::Binary);
-    }
-    CHECK_THROWS(SearchEngine::binarySearch(l, SearchField::Name, "", SortField::Name), InvalidSearch);
-
-    // by ID on an ID-sorted list: every ID is found, misses are not
     PatientList byId = f.list();
     SortEngine::selectionSort(byId, SortField::Id);
     for (int i = 1; i <= 12; ++i) {
@@ -239,10 +262,13 @@ static void testBinarySearch() {
         auto r = SearchEngine::binarySearch(byId, SearchField::Id, buf, SortField::Id);
         CHECK_EQ(r.matches.size(), std::size_t(1));
         CHECK_EQ(v::toLower(r.matches[0]->id()), std::string(buf));
+        CHECK(r.algorithm == SearchAlgorithm::Binary);
     }
+    for (const char* key : {"3", "p3", "P-3", "0003"})                       // short forms of an ID work here too
+        CHECK_EQ(SearchEngine::binarySearch(byId, SearchField::Id, key, SortField::Id).matches[0]->id(), std::string("P-0003"));
     CHECK(SearchEngine::binarySearch(byId, SearchField::Id, "P-0099", SortField::Id).matches.empty());
     CHECK(SearchEngine::binarySearch(byId, SearchField::Id, "P-0000", SortField::Id).matches.empty());
-    CHECK_THROWS(SearchEngine::binarySearch(byId, SearchField::Id, "P-0001", SortField::Name), InvalidSearch);
+    CHECK_THROWS(SearchEngine::binarySearch(byId, SearchField::Id, "  ", SortField::Id), InvalidSearch);
 
     PatientList empty;
     CHECK(SearchEngine::binarySearch(empty, SearchField::Id, "P-1", SortField::Id).matches.empty());
@@ -250,20 +276,19 @@ static void testBinarySearch() {
 
 static void testBinaryIsFasterOnLargeLists() {
     Fixture f;
-    for (int i = 0; i < 200; ++i) {
-        char name[32]; snprintf(name, sizeof name, "Patient %03d", (i * 37) % 200);   // scrambled order
-        f.add(name, 20 + i % 50);
-    }
+    for (int i = 0; i < 200; ++i) f.add("Patient " + std::to_string(i), 20 + i % 50);
     PatientList l = f.list();
-    SortEngine::insertionSort(l, SortField::Name);
-    auto bin = SearchEngine::binarySearch(l, SearchField::Name, "patient 150", SortField::Name);
-    auto lin = SearchEngine::linearSearch(l, SearchField::Name, "patient 150");
+    SortEngine::insertionSort(l, SortField::Id);
+    auto bin = SearchEngine::binarySearch(l, SearchField::Id, "P-0150", SortField::Id);
+    auto lin = SearchEngine::linearSearch(l, SearchField::Id, "P-0150");
     CHECK_EQ(bin.matches.size(), std::size_t(1));
     CHECK_EQ(lin.matches.size(), std::size_t(1));
-    CHECK_EQ(lin.comparisons, 200L);
-    CHECK(bin.comparisons <= 12);                                // about log2(200) + 1, far fewer than 200
-    auto miss = SearchEngine::binarySearch(l, SearchField::Name, "zzz", SortField::Name);
-    CHECK(miss.matches.empty() && miss.comparisons <= 9);
+    CHECK_EQ(lin.comparisons, 150L);                             // linear search walks to position 150
+    CHECK(bin.comparisons <= 8);                                 // about log2(200)
+    auto miss = SearchEngine::binarySearch(l, SearchField::Id, "P-0999", SortField::Id);
+    auto linMiss = SearchEngine::linearSearch(l, SearchField::Id, "P-0999");
+    CHECK(miss.matches.empty() && miss.comparisons <= 8);
+    CHECK_EQ(linMiss.comparisons, 200L);                         // a miss makes linear search check everyone
 }
 
 static void testAlgorithmChoice() {
@@ -271,23 +296,26 @@ static void testAlgorithmChoice() {
     CHECK(SearchEngine::isAlgorithmValid(A::Linear, F::Name, std::nullopt));
     CHECK(SearchEngine::isAlgorithmValid(A::Recursive, F::Category, std::nullopt));
     CHECK(!SearchEngine::isAlgorithmValid(A::Binary, F::Name, std::nullopt));
-    CHECK(!SearchEngine::isAlgorithmValid(A::Binary, F::Name, SortField::Id));
-    CHECK(SearchEngine::isAlgorithmValid(A::Binary, F::Name, SortField::Name));
+    CHECK(!SearchEngine::isAlgorithmValid(A::Binary, F::Name, SortField::Name));   // a name is matched in part
+    CHECK(!SearchEngine::isAlgorithmValid(A::Binary, F::Id, std::nullopt));
+    CHECK(!SearchEngine::isAlgorithmValid(A::Binary, F::Id, SortField::Name));
     CHECK(SearchEngine::isAlgorithmValid(A::Binary, F::Id, SortField::Id));
-    CHECK(!SearchEngine::isAlgorithmValid(A::Binary, F::Category, SortField::Name));
+    CHECK(!SearchEngine::isAlgorithmValid(A::Binary, F::Category, SortField::Id));
 
     // the engine picks a technique that fits the state of the data
     CHECK(SearchEngine::suggest(F::Id, std::nullopt) == A::Linear);
+    CHECK(SearchEngine::suggest(F::Id, SortField::Age) == A::Linear);
     CHECK(SearchEngine::suggest(F::Id, SortField::Id) == A::Binary);
     CHECK(SearchEngine::suggest(F::Name, std::nullopt) == A::Recursive);
-    CHECK(SearchEngine::suggest(F::Name, SortField::Age) == A::Recursive);
-    CHECK(SearchEngine::suggest(F::Name, SortField::Name) == A::Binary);
-    CHECK(SearchEngine::suggest(F::Category, SortField::Name) == A::Linear);
+    CHECK(SearchEngine::suggest(F::Name, SortField::Name) == A::Recursive);
+    CHECK(SearchEngine::suggest(F::Category, SortField::Id) == A::Linear);
     CHECK(!SearchEngine::whySuggested(F::Name, SortField::Name).empty());
+    CHECK(!SearchEngine::whySuggested(F::Id, SortField::Id).empty());
 
     Fixture f; f.fillSample();
     PatientList l = f.list();
-    CHECK_THROWS(SearchEngine::search(l, F::Name, "ada", A::Binary, std::nullopt), InvalidSearch);
+    CHECK_THROWS(SearchEngine::search(l, F::Name, "ada", A::Binary, SortField::Name), InvalidSearch);
+    CHECK_THROWS(SearchEngine::search(l, F::Id, "P-0001", A::Binary, std::nullopt), InvalidSearch);
     CHECK_EQ(SearchEngine::search(l, F::Name, "ada", A::Recursive, std::nullopt).matches.size(), std::size_t(2));
     CHECK_EQ(SearchEngine::name(A::Binary), std::string("Binary Search"));
 }

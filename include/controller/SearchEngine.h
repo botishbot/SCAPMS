@@ -18,13 +18,13 @@ struct SearchResult {
 
 // Hand-written searching algorithms (no std::find / std::binary_search).
 //
-//   Id        exact match, case-insensitive
-//   Name      case-insensitive match on the start of the name ("ad" finds "Ada Obi" and "Adebayo Ade")
+//   Id        exact match, case-insensitive; "3", "p3" and "P-3" all mean P-0003
+//   Name      case-insensitive match anywhere in the name ("eze" finds "Ngozi Eze", "ob" finds "Emeka Obi")
 //   Category  General / Emergency / Follow-Up
 //
 //   Linear     any field, any list order
 //   Recursive  any field, any list order (divide and conquer)
-//   Binary     Id or Name only, and only if the list is currently sorted by that field
+//   Binary     Id only (an exact key), and only if the list is currently sorted by ID
 class SearchEngine {
 public:
     // sortedBy tells the engine what order the list is in right now (empty = unsorted/unknown).

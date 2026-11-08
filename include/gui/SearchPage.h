@@ -31,6 +31,9 @@ public:
 signals:
     void patientViewed(const QString& patientId);  // a result row was selected (feeds the cache)
     void statusMessage(const QString&);
+    void openPatientRequested(const QString& patientId);        // show the patient's record (edit / delete)
+    void openAppointmentsRequested(const QString& patientId);   // show the patient's appointments (schedule / cancel ...)
+    void addToQueueRequested(const QString& patientId);         // put the patient in the waiting queue
 
 private slots:
     void onFieldChanged();
@@ -51,6 +54,7 @@ private:
     void updateSortExplanation();
     void updateStatusLine();
     void showAll();
+    void updateSelectedPatient();
     void performSearch(bool interactive);
     controller::SearchField currentField() const;
     std::string currentKeyword() const;
@@ -81,6 +85,11 @@ private:
     QLabel* m_sortInfo = nullptr;
     QPushButton* m_sortBtn = nullptr;
     QPushButton* m_resetBtn = nullptr;
+    QLabel* m_selectedInfo = nullptr;       // details of the selected result
+    QPushButton* m_openBtn = nullptr;
+    QPushButton* m_appointmentsBtn = nullptr;
+    QPushButton* m_queueBtn = nullptr;
+    QString m_selectedId;
 };
 
 } // namespace scapms::gui

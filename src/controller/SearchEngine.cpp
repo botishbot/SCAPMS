@@ -38,7 +38,7 @@ Query makeQuery(SearchField field, const std::string& keyword) {
     }
     if (v::trim(keyword).empty())
         throw ClinicException(ErrorCode::InvalidSearch, "Enter a search keyword first.");
-    q.key = (field == SearchField::Id) ? v::toLower(v::trim(keyword)) : v::normalizedName(keyword);
+    q.key = (field == SearchField::Id) ? v::normalizedIdKey(keyword) : v::normalizedName(keyword);
     return q;
 }
 
@@ -46,7 +46,7 @@ Query makeQuery(SearchField field, const std::string& keyword) {
 bool matches(const PatientRecord& p, const Query& q) {
     switch (q.field) {
         case SearchField::Id: return v::toLower(p.id()) == q.key;
-        case SearchField::Name: return v::startsWith(v::normalizedName(p.name()), q.key);
+        case SearchField::Name: return v::contains(v::normalizedName(p.name()), q.key);
         case SearchField::Category: return p.category() == q.category;
     }
     return false;
@@ -71,8 +71,7 @@ void searchRange(const PatientList& list, std::size_t lo, std::size_t hi, const 
 bool SearchEngine::isAlgorithmValid(SearchAlgorithm algorithm, SearchField field, std::optional<SortField> sortedBy) {
     if (algorithm != SearchAlgorithm::Binary) return true;
     if (!sortedBy) return false;
-    return (field == SearchField::Id && *sortedBy == SortField::Id) ||
-           (field == SearchField::Name && *sortedBy == SortField::Name);
+    return field == SearchField::Id && *sortedBy == SortField::Id;  // only an exact key such as the patient ID can be halved
 }
 
 SearchAlgorithm SearchEngine::suggest(SearchField field, std::optional<SortField> sortedBy) {
@@ -83,11 +82,10 @@ SearchAlgorithm SearchEngine::suggest(SearchField field, std::optional<SortField
 std::string SearchEngine::whySuggested(SearchField field, std::optional<SortField> sortedBy) {
     switch (suggest(field, sortedBy)) {
         case SearchAlgorithm::Binary:
-            return "The list is sorted by " + fieldName(field) +
-                   ", so Binary Search can halve the search area at every step.";
+            return "The list is sorted by Patient ID, so Binary Search can halve the search area at every step.";
         case SearchAlgorithm::Recursive:
-            return "The list is not sorted by name, so Binary Search is not possible. "
-                   "Recursive Search checks every patient by splitting the list in halves.";
+            return "A name can be typed in part, so every patient has to be checked. Recursive Search does this by "
+                   "splitting the list in halves. Binary Search is only possible for an exact key such as the Patient ID.";
         case SearchAlgorithm::Linear:
             break;
     }
@@ -121,40 +119,25 @@ SearchResult SearchEngine::recursiveSearch(const PatientList& list, SearchField 
 
 SearchResult SearchEngine::binarySearch(const PatientList& list, SearchField field, const std::string& keyword,
                                         std::optional<SortField> sortedBy) {
-    if (field == SearchField::Category)
-        throw ClinicException(ErrorCode::InvalidSearch, "Binary Search cannot be used to search by category.");
+    if (field != SearchField::Id)
+        throw ClinicException(ErrorCode::InvalidSearch,
+                              "Binary Search can only be used to search by Patient ID (an exact match). "
+                              "Names and categories are matched in part, so they use Linear or Recursive Search.");
     if (!isAlgorithmValid(SearchAlgorithm::Binary, field, sortedBy))
         throw ClinicException(ErrorCode::InvalidSearch,
-                              "Binary Search needs the list sorted by " + fieldName(field) +
-                                  " first. Use the Sort section, then search again.");
+                              "Binary Search needs the list sorted by Patient ID first. Use the Sort section, then search again.");
     const Query q = makeQuery(field, keyword);
     SearchResult result;
     result.algorithm = SearchAlgorithm::Binary;
 
+    // exact match: halve the range until the ID is found or the range is empty
     std::size_t lo = 0, hi = list.size();
-    if (field == SearchField::Id) {
-        // exact match: halve the range until the ID is found or the range is empty
-        while (lo < hi) {
-            const std::size_t mid = lo + (hi - lo) / 2;
-            ++result.comparisons;
-            const int c = q.key.compare(v::toLower(list[mid]->id()));
-            if (c == 0) { result.matches.push_back(list[mid]); break; }
-            if (c < 0) hi = mid; else lo = mid + 1;
-        }
-        return result;
-    }
-
-    // Name prefix: binary-search for the first name that is >= the prefix, then walk forward
-    // while names still start with it (all such names are next to each other in sorted order).
     while (lo < hi) {
         const std::size_t mid = lo + (hi - lo) / 2;
         ++result.comparisons;
-        if (v::normalizedName(list[mid]->name()) < q.key) lo = mid + 1; else hi = mid;
-    }
-    for (std::size_t i = lo; i < list.size(); ++i) {
-        ++result.comparisons;
-        if (!v::startsWith(v::normalizedName(list[i]->name()), q.key)) break;
-        result.matches.push_back(list[i]);
+        const int c = q.key.compare(v::toLower(list[mid]->id()));
+        if (c == 0) { result.matches.push_back(list[mid]); break; }
+        if (c < 0) hi = mid; else lo = mid + 1;
     }
     return result;
 }

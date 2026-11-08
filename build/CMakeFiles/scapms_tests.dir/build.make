@@ -120,10 +120,24 @@ CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/file_report_tests.cpp" -o CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.s
 
+CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o: CMakeFiles/scapms_tests.dir/flags.make
+CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/fuzz_tests.cpp
+CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o: CMakeFiles/scapms_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o -MF CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o.d -o CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o -c "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/fuzz_tests.cpp"
+
+CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/fuzz_tests.cpp" > CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.i
+
+CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/fuzz_tests.cpp" -o CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.s
+
 CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o: CMakeFiles/scapms_tests.dir/flags.make
 CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/model_tests.cpp
 CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o: CMakeFiles/scapms_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o -MF CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o.d -o CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o -c "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/model_tests.cpp"
 
 CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.i: cmake_force
@@ -137,7 +151,7 @@ CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.s: cmake_force
 CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o: CMakeFiles/scapms_tests.dir/flags.make
 CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/queue_undo_tests.cpp
 CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o: CMakeFiles/scapms_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o -MF CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o.d -o CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o -c "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/queue_undo_tests.cpp"
 
 CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.i: cmake_force
@@ -151,7 +165,7 @@ CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.s: cmake_force
 CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o: CMakeFiles/scapms_tests.dir/flags.make
 CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/search_sort_tests.cpp
 CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o: CMakeFiles/scapms_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o -MF CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o.d -o CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o -c "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/search_sort_tests.cpp"
 
 CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.i: cmake_force
@@ -165,7 +179,7 @@ CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.s: cmake_force
 CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o: CMakeFiles/scapms_tests.dir/flags.make
 CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/test_main.cpp
 CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o: CMakeFiles/scapms_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o -MF CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o.d -o CMakeFiles/scapms_tests.dir/tests/test_main.cpp.o -c "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/test_main.cpp"
 
 CMakeFiles/scapms_tests.dir/tests/test_main.cpp.i: cmake_force
@@ -181,6 +195,7 @@ scapms_tests_OBJECTS = \
 "CMakeFiles/scapms_tests.dir/scapms_tests_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/scapms_tests.dir/tests/appointment_tests.cpp.o" \
 "CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.o" \
+"CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o" \
 "CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o" \
 "CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o" \
 "CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o" \
@@ -192,6 +207,7 @@ scapms_tests_EXTERNAL_OBJECTS =
 scapms_tests: CMakeFiles/scapms_tests.dir/scapms_tests_autogen/mocs_compilation.cpp.o
 scapms_tests: CMakeFiles/scapms_tests.dir/tests/appointment_tests.cpp.o
 scapms_tests: CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.o
+scapms_tests: CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o
 scapms_tests: CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o
 scapms_tests: CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o
 scapms_tests: CMakeFiles/scapms_tests.dir/tests/search_sort_tests.cpp.o
@@ -202,7 +218,7 @@ scapms_tests: libscapms_io.a
 scapms_tests: libscapms_core.a
 scapms_tests: /usr/lib/x86_64-linux-gnu/libQt6Core.so.6.10.2
 scapms_tests: CMakeFiles/scapms_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable scapms_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable scapms_tests"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scapms_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

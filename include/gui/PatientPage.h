@@ -24,6 +24,7 @@ public:
     explicit PatientPage(controller::ClinicManager& manager, QWidget* parent = nullptr);
 
     void refresh();
+    void selectPatient(const QString& patientId);  // show this patient in the table and the form
 
 signals:
     void patientsChanged();            // data was modified (registered / edited / deleted)

@@ -170,6 +170,7 @@ file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/bot/Downloads/c++ pro/v2/SCAPMS_
 set(OLD_GLOB
   "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/appointment_tests.cpp"
   "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/file_report_tests.cpp"
+  "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/fuzz_tests.cpp"
   "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/model_tests.cpp"
   "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/queue_undo_tests.cpp"
   "/home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/tests/search_sort_tests.cpp"

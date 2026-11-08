@@ -201,7 +201,7 @@ void DataCoordinator::loadDemo() {
     model::ClinicDatabase staging;
     utils::IDGenerator stagingIds;
     try {
-        controller::DemoData::populate(staging, stagingIds, QDate::currentDate().toString("yyyy-MM-dd").toStdString());
+        controller::DemoData::populate(staging, stagingIds, QDate::currentDate().toString("yyyy-MM-dd").toStdString(), true);
     } catch (const ClinicException& e) {
         showError(tr("Could not create demo data"), QString::fromUtf8(e.what()));
         return;
@@ -212,7 +212,7 @@ void DataCoordinator::loadDemo() {
     m_path.clear();  // demo data is not a file yet: saving asks where to put it
     emit pathChanged();
     emit dataReplaced(true);
-    emit statusMessage(tr("Loaded demo data (fictional patients)"));
+    emit statusMessage(tr("Loaded demo data (30 fictional patients)"));
 }
 
 } // namespace scapms::gui

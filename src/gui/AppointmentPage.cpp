@@ -86,6 +86,19 @@ void AppointmentPage::buildUi() {
     head->addWidget(m_filter);
     left->addLayout(head);
 
+    // shown when the list is limited to one patient (opened from the Search & Sort page)
+    m_filterBanner = new QFrame(this);
+    m_filterBanner->setObjectName("FilterBanner");
+    auto* bannerLay = new QHBoxLayout(m_filterBanner);
+    bannerLay->setContentsMargins(12, 6, 12, 6);
+    m_filterLabel = new QLabel(m_filterBanner);
+    auto* showAllBtn = new QPushButton(tr("Show all appointments"), m_filterBanner);
+    bannerLay->addWidget(m_filterLabel, 1);
+    bannerLay->addWidget(showAllBtn);
+    m_filterBanner->hide();
+    left->addWidget(m_filterBanner);
+    connect(showAllBtn, &QPushButton::clicked, this, [this] { m_patientFilter.clear(); fillTable(); });
+
     m_table = new QTableWidget(0, ColCount, this);
     m_table->setObjectName("AppointmentTable");
     m_table->setHorizontalHeaderLabels({tr("ID"), tr("Patient"), tr("Service"), tr("Date & time"), tr("Status"),
@@ -237,7 +250,33 @@ void AppointmentPage::fillServiceCombo() {
     m_scheduleBtn->setEnabled(!noPatients && !noServices);
 }
 
+void AppointmentPage::showPatient(const QString& patientId) {
+    m_patientFilter = patientId;
+    m_filter->setCurrentIndex(0);  // all statuses
+    const int idx = m_patient->findData(patientId);
+    if (idx >= 0) m_patient->setCurrentIndex(idx);
+    m_selectedId.clear();
+    fillTable();
+}
+
+void AppointmentPage::updateFilterBanner() {
+    if (m_patientFilter.isEmpty()) {
+        m_filterBanner->hide();
+        return;
+    }
+    try {
+        const auto& p = m_patients.getPatient(m_patientFilter.toStdString());
+        m_filterLabel->setText(tr("Showing the appointments of <b>%1</b> (%2). Use the form on the right to schedule another one.")
+                                   .arg(q(p.name()).toHtmlEscaped(), q(p.id())));
+        m_filterBanner->show();
+    } catch (const ClinicException&) {  // the patient was deleted
+        m_patientFilter.clear();
+        m_filterBanner->hide();
+    }
+}
+
 void AppointmentPage::fillTable() {
+    updateFilterBanner();
     const std::string nowStr = now();
     const auto rows = m_appointments.allAppointments(nowStr);
     const QString filter = m_filter->currentIndex() == 0 ? QString() : m_filter->currentText();
@@ -250,6 +289,7 @@ void AppointmentPage::fillTable() {
         const QString status = q(row.displayStatus);
         if (!filter.isEmpty() && status != filter) continue;
         const auto& a = row.appointment;
+        if (!m_patientFilter.isEmpty() && q(a.patientId()) != m_patientFilter) continue;
         const StatusLook look = lookFor(status);
 
         const int r = shown++;

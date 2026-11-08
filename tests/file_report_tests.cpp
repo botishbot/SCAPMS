@@ -126,6 +126,48 @@ static void testDemoDataIsValid() {
     FileHandler::fromJson(FileHandler::toJson(other), copy, ids);
 }
 
+static void testLargeDemoData() {
+    ClinicDatabase db; IDGenerator ids;
+    controller::UndoManager undo(db);
+    controller::ClinicManager mgr(db, ids, undo);
+    DemoData::populate(db, ids, TODAY, true);
+    CHECK_EQ(db.patientCount(), std::size_t(30));
+    CHECK_EQ(db.services().size(), std::size_t(4));
+    CHECK_EQ(mgr.countByCategory(model::PatientCategory::General), 16);
+    CHECK_EQ(mgr.countByCategory(model::PatientCategory::Emergency), 6);
+    CHECK_EQ(mgr.countByCategory(model::PatientCategory::FollowUp), 8);
+    int appointments = 0;
+    for (const auto& p : db.patients()) appointments += static_cast<int>(p->appointments().size());
+    CHECK_EQ(appointments, 72);
+    CHECK_EQ(db.findPatient("P-0029")->name(), std::string("Nkechi Onuoha"));
+    CHECK(db.findPatient("P-0029")->appointments().empty());                      // a new patient without visits
+    CHECK_EQ(ids.peekPatientId(), std::string("P-0031"));
+    CHECK_EQ(ids.peekAppointmentId(), std::string("A-0073"));
+
+    // the first ten patients and their appointments are the same as in the basic set
+    ClinicDatabase basic; IDGenerator basicIds;
+    DemoData::populate(basic, basicIds, TODAY, false);
+    for (std::size_t i = 0; i < basic.patientCount(); ++i) {
+        CHECK_EQ(db.patients()[i]->name(), basic.patients()[i]->name());
+        CHECK_EQ(db.patients()[i]->appointments().size(), basic.patients()[i]->appointments().size());
+    }
+
+    // it survives the loader's checks and gives sensible reports
+    ClinicDatabase copy; IDGenerator copyIds;
+    FileHandler::fromJson(FileHandler::toJson(db), copy, copyIds);
+    CHECK(describe(copy) == describe(db));
+    ReportGenerator rep(db);
+    auto top = rep.mostFrequentlyAttended(5);
+    CHECK_EQ(top[0].name, std::string("Chukwuemeka Obiora"));  CHECK_EQ(top[0].completed, 4);
+    CHECK_EQ(top[1].name, std::string("Amara Okafor"));        CHECK_EQ(top[1].completed, 3);
+    CHECK_EQ(top[2].name, std::string("Peter Danjuma"));       CHECK_EQ(top[2].completed, 3);
+    CHECK_EQ(rep.patientsWithPending().size(), std::size_t(28));
+    auto today = rep.dailySummary(TODAY);
+    CHECK_EQ(today.total, 11);  CHECK_EQ(today.completed, 1);  CHECK_EQ(today.pending, 10);
+    auto dist = rep.categoryDistribution();
+    CHECK_EQ(dist[0].count, 16);  CHECK_EQ(dist[1].count, 6);  CHECK_EQ(dist[2].count, 8);
+}
+
 static void testRoundTrip() {
     Demo d;
     d.mgr.deletePatient("P-0002");                                    // creates history
@@ -390,6 +432,7 @@ static void testUndoDescriptions() {
 void runFileReportTests() {
     testDateArithmetic();
     testDemoDataIsValid();
+    testLargeDemoData();
     testRoundTrip();
     testLoadReplacesEverything();
     testBadFilesAreRejectedSafely();

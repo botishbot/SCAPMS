@@ -66,3 +66,6 @@ QLabel[big="true"] { font-size: 28px; font-weight: 700; color: #12343B; }
 QLabel#FilePathLabel { color: #3C4A53; }
 
 QLabel#SmallNote { color: #5B6B75; font-size: 12px; }
+
+QFrame#FilterBanner { background: #E6F4F5; border: 1px solid #BFE0E3; border-radius: 6px; }
+QLabel#SelectedPatientInfo { color: #1F2A33; }

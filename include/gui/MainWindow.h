@@ -52,6 +52,7 @@ private slots:
     void onAppointmentsChanged();
     void onPatientViewed(const QString& patientId);
     void onDataReplaced(bool markDirty);
+    void onAddToQueueRequested(const QString& patientId);
 
 private:
     void buildMenus();

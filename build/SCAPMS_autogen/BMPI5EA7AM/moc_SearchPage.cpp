@@ -43,6 +43,9 @@ template <> constexpr inline auto scapms::gui::SearchPage::qt_create_metaobjectd
         "",
         "patientId",
         "statusMessage",
+        "openPatientRequested",
+        "openAppointmentsRequested",
+        "addToQueueRequested",
         "onFieldChanged",
         "onKeywordChanged",
         "text",
@@ -64,26 +67,38 @@ template <> constexpr inline auto scapms::gui::SearchPage::qt_create_metaobjectd
         QtMocHelpers::SignalData<void(const QString &)>(4, 2, QMC::AccessPublic, QMetaType::Void, {{
             { QMetaType::QString, 2 },
         }}),
+        // Signal 'openPatientRequested'
+        QtMocHelpers::SignalData<void(const QString &)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 },
+        }}),
+        // Signal 'openAppointmentsRequested'
+        QtMocHelpers::SignalData<void(const QString &)>(6, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 },
+        }}),
+        // Signal 'addToQueueRequested'
+        QtMocHelpers::SignalData<void(const QString &)>(7, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { QMetaType::QString, 3 },
+        }}),
         // Slot 'onFieldChanged'
-        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'onKeywordChanged'
-        QtMocHelpers::SlotData<void(const QString &)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 7 },
+        QtMocHelpers::SlotData<void(const QString &)>(9, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 10 },
         }}),
         // Slot 'onCategoryChanged'
-        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onSearchClicked'
-        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onClearClicked'
-        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onSortClicked'
         QtMocHelpers::SlotData<void()>(11, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onResetOrderClicked'
+        // Slot 'onSearchClicked'
         QtMocHelpers::SlotData<void()>(12, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onSortChoiceChanged'
+        // Slot 'onClearClicked'
         QtMocHelpers::SlotData<void()>(13, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'onSelectionChanged'
+        // Slot 'onSortClicked'
         QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onResetOrderClicked'
+        QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSortChoiceChanged'
+        QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSelectionChanged'
+        QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -109,15 +124,18 @@ void scapms::gui::SearchPage::qt_static_metacall(QObject *_o, QMetaObject::Call 
         switch (_id) {
         case 0: _t->patientViewed((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
         case 1: _t->statusMessage((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 2: _t->onFieldChanged(); break;
-        case 3: _t->onKeywordChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
-        case 4: _t->onCategoryChanged(); break;
-        case 5: _t->onSearchClicked(); break;
-        case 6: _t->onClearClicked(); break;
-        case 7: _t->onSortClicked(); break;
-        case 8: _t->onResetOrderClicked(); break;
-        case 9: _t->onSortChoiceChanged(); break;
-        case 10: _t->onSelectionChanged(); break;
+        case 2: _t->openPatientRequested((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 3: _t->openAppointmentsRequested((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 4: _t->addToQueueRequested((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 5: _t->onFieldChanged(); break;
+        case 6: _t->onKeywordChanged((*reinterpret_cast<std::add_pointer_t<QString>>(_a[1]))); break;
+        case 7: _t->onCategoryChanged(); break;
+        case 8: _t->onSearchClicked(); break;
+        case 9: _t->onClearClicked(); break;
+        case 10: _t->onSortClicked(); break;
+        case 11: _t->onResetOrderClicked(); break;
+        case 12: _t->onSortChoiceChanged(); break;
+        case 13: _t->onSelectionChanged(); break;
         default: ;
         }
     }
@@ -125,6 +143,12 @@ void scapms::gui::SearchPage::qt_static_metacall(QObject *_o, QMetaObject::Call 
         if (QtMocHelpers::indexOfMethod<void (SearchPage::*)(const QString & )>(_a, &SearchPage::patientViewed, 0))
             return;
         if (QtMocHelpers::indexOfMethod<void (SearchPage::*)(const QString & )>(_a, &SearchPage::statusMessage, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (SearchPage::*)(const QString & )>(_a, &SearchPage::openPatientRequested, 2))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (SearchPage::*)(const QString & )>(_a, &SearchPage::openAppointmentsRequested, 3))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (SearchPage::*)(const QString & )>(_a, &SearchPage::addToQueueRequested, 4))
             return;
     }
 }
@@ -148,14 +172,14 @@ int scapms::gui::SearchPage::qt_metacall(QMetaObject::Call _c, int _id, void **_
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 14;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 14)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 11;
+        _id -= 14;
     }
     return _id;
 }
@@ -170,5 +194,23 @@ void scapms::gui::SearchPage::patientViewed(const QString & _t1)
 void scapms::gui::SearchPage::statusMessage(const QString & _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
+}
+
+// SIGNAL 2
+void scapms::gui::SearchPage::openPatientRequested(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 2, nullptr, _t1);
+}
+
+// SIGNAL 3
+void scapms::gui::SearchPage::openAppointmentsRequested(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 3, nullptr, _t1);
+}
+
+// SIGNAL 4
+void scapms::gui::SearchPage::addToQueueRequested(const QString & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 4, nullptr, _t1);
 }
 QT_WARNING_POP

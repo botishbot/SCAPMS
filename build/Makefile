@@ -1171,6 +1171,30 @@ tests/file_report_tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/scapms_tests.dir/build.make CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.s
 .PHONY : tests/file_report_tests.cpp.s
 
+tests/fuzz_tests.o: tests/fuzz_tests.cpp.o
+.PHONY : tests/fuzz_tests.o
+
+# target to build an object file
+tests/fuzz_tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scapms_tests.dir/build.make CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o
+.PHONY : tests/fuzz_tests.cpp.o
+
+tests/fuzz_tests.i: tests/fuzz_tests.cpp.i
+.PHONY : tests/fuzz_tests.i
+
+# target to preprocess a source file
+tests/fuzz_tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scapms_tests.dir/build.make CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.i
+.PHONY : tests/fuzz_tests.cpp.i
+
+tests/fuzz_tests.s: tests/fuzz_tests.cpp.s
+.PHONY : tests/fuzz_tests.s
+
+# target to generate assembly for a file
+tests/fuzz_tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/scapms_tests.dir/build.make CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.s
+.PHONY : tests/fuzz_tests.cpp.s
+
 tests/model_tests.o: tests/model_tests.cpp.o
 .PHONY : tests/model_tests.o
 
@@ -1399,6 +1423,9 @@ help:
 	@echo "... tests/file_report_tests.o"
 	@echo "... tests/file_report_tests.i"
 	@echo "... tests/file_report_tests.s"
+	@echo "... tests/fuzz_tests.o"
+	@echo "... tests/fuzz_tests.i"
+	@echo "... tests/fuzz_tests.s"
 	@echo "... tests/model_tests.o"
 	@echo "... tests/model_tests.i"
 	@echo "... tests/model_tests.s"

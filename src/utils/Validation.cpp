@@ -58,6 +58,29 @@ bool startsWith(const std::string& text, const std::string& prefix) {
     return true;
 }
 
+bool contains(const std::string& text, const std::string& needle) {
+    if (needle.size() > text.size()) return false;
+    for (std::size_t start = 0; start + needle.size() <= text.size(); ++start) {
+        std::size_t k = 0;
+        while (k < needle.size() && text[start + k] == needle[k]) ++k;
+        if (k == needle.size()) return true;
+    }
+    return false;
+}
+
+std::string normalizedIdKey(const std::string& text) {
+    std::string t = toLower(trim(text));
+    std::size_t i = 0;
+    if (i < t.size() && t[i] == 'p') ++i;
+    if (i < t.size() && t[i] == '-') ++i;
+    if (i == t.size() || t.size() - i > 9) return t;
+    for (std::size_t k = i; k < t.size(); ++k)
+        if (!isDigit(t[k])) return t;
+    char buf[32];
+    std::snprintf(buf, sizeof buf, "p-%04d", std::stoi(t.substr(i)));
+    return buf;
+}
+
 bool isValidDate(const std::string& s) {
     if (s.size() != 10 || s[4] != '-' || s[7] != '-') return false;
     for (std::size_t i : {0u, 1u, 2u, 3u, 5u, 6u, 8u, 9u})

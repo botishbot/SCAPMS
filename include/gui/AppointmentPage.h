@@ -8,6 +8,7 @@
 #include <functional>
 #include <string>
 
+class QFrame;
 class QTableWidget;
 class QComboBox;
 class QDateTimeEdit;
@@ -29,6 +30,7 @@ public:
                     QWidget* parent = nullptr, Clock clock = {});
 
     void refresh();  // reload patient list, service list and table
+    void showPatient(const QString& patientId);  // list only this patient's appointments and select them in the booking form
 
     static constexpr int kReminderMinutes = 15;  // pending appointments starting within this time trigger a reminder
 
@@ -51,6 +53,7 @@ private:
     void fillServiceCombo();
     void fillTable();
     void checkReminders();
+    void updateFilterBanner();
     void updateActionButtons();
     std::string now() const;
     bool runGuarded(const std::function<void()>& action);
@@ -60,6 +63,9 @@ private:
     Clock m_clock;
     QString m_selectedId;
     QString m_selectedStatus;
+    QString m_patientFilter;   // empty = all patients
+    QFrame* m_filterBanner = nullptr;
+    QLabel* m_filterLabel = nullptr;
     QSet<QString> m_reminded;  // appointments already announced (ID and time)
 
     QTableWidget* m_table = nullptr;

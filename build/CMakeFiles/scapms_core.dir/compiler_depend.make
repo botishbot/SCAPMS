@@ -139,81 +139,22 @@ scapms_core_autogen/timestamp: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Fold
   /usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-none.cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeCXXCompiler.cmake.in \
-  /usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp \
   /usr/share/cmake-4.2/Modules/CMakeCXXInformation.cmake \
   /usr/share/cmake-4.2/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
   /usr/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeCompilerIdDetection.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeDetermineCompilerSupport.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake \
   /usr/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake \
   /usr/share/cmake-4.2/Modules/CMakeGenericSystem.cmake \
   /usr/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake \
   /usr/share/cmake-4.2/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeParseImplicitIncludeInfo.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeParseImplicitLinkInfo.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeParseLibraryArchitecture.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeSystem.cmake.in \
   /usr/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake \
   /usr/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeTestCompilerCommon.cmake \
-  /usr/share/cmake-4.2/Modules/CMakeUnixFindMake.cmake \
   /usr/share/cmake-4.2/Modules/CheckCXXCompilerFlag.cmake \
   /usr/share/cmake-4.2/Modules/CheckCXXSourceCompiles.cmake \
   /usr/share/cmake-4.2/Modules/CheckIncludeFileCXX.cmake \
   /usr/share/cmake-4.2/Modules/CheckLibraryExists.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Borland-DetermineCompiler.cmake \
   /usr/share/cmake-4.2/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Cray-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Diab-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/GHS-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
   /usr/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake \
   /usr/share/cmake-4.2/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/IAR-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Intel-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/PGI-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Renesas-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/SCO-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/TI-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/TIClang-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
-  /usr/share/cmake-4.2/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
   /usr/share/cmake-4.2/Modules/FindOpenGL.cmake \
   /usr/share/cmake-4.2/Modules/FindPackageHandleStandardArgs.cmake \
   /usr/share/cmake-4.2/Modules/FindPackageMessage.cmake \
@@ -222,19 +163,15 @@ scapms_core_autogen/timestamp: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Fold
   /usr/share/cmake-4.2/Modules/GNUInstallDirs.cmake \
   /usr/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake \
   /usr/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake \
-  /usr/share/cmake-4.2/Modules/Internal/CMakeInspectCXXLinker.cmake \
   /usr/share/cmake-4.2/Modules/Internal/CheckCompilerFlag.cmake \
   /usr/share/cmake-4.2/Modules/Internal/CheckFlagCommonConfig.cmake \
   /usr/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake \
-  /usr/share/cmake-4.2/Modules/Internal/FeatureTesting.cmake \
   /usr/share/cmake-4.2/Modules/Linker/GNU-CXX.cmake \
   /usr/share/cmake-4.2/Modules/Linker/GNU.cmake \
   /usr/share/cmake-4.2/Modules/MacroAddFileDependencies.cmake \
   /usr/share/cmake-4.2/Modules/Platform/Linker/GNU.cmake \
   /usr/share/cmake-4.2/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
   /usr/share/cmake-4.2/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-4.2/Modules/Platform/Linux-Determine-CXX.cmake \
   /usr/share/cmake-4.2/Modules/Platform/Linux-GNU-CXX.cmake \
   /usr/share/cmake-4.2/Modules/Platform/Linux-GNU.cmake \
   /usr/share/cmake-4.2/Modules/Platform/Linux-Initialize.cmake \
@@ -3968,6 +3905,8 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
@@ -3992,6 +3931,8 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
@@ -4005,6 +3946,8 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
@@ -4035,6 +3978,10 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
@@ -4074,6 +4021,8 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/include/stdio.h:
 
+/usr/include/pthread.h:
+
 /usr/include/locale.h:
 
 /usr/include/linux/stddef.h:
@@ -4089,6 +4038,10 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 /usr/include/c++/15/type_traits:
 
 /usr/include/c++/15/tuple:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/c++/15/string_view:
 
 /usr/include/c++/15/string:
 
@@ -4144,111 +4097,11 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/include/c++/15/bits/string_view.tcc:
 
-/usr/include/c++/15/bits/stl_stack.h:
-
-/usr/include/c++/15/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/15/bits/stl_iterator.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
-
-/usr/include/c++/15/bits/stl_deque.h:
-
-/usr/include/c++/15/bits/stl_pair.h:
-
-/usr/include/c++/15/bits/stl_bvector.h:
-
-/usr/include/c++/15/bits/std_function.h:
-
-/usr/include/c++/15/bits/stl_uninitialized.h:
-
-/usr/include/c++/15/bits/shared_ptr_base.h:
-
-/usr/include/c++/15/bits/shared_ptr.h:
-
-/usr/include/c++/15/bits/requires_hosted.h:
-
-/usr/include/c++/15/bits/range_access.h:
-
-/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/model/EmergencyPatient.h:
-
-/usr/include/c++/15/bits/stl_construct.h:
-
-/usr/include/c++/15/bits/ptr_traits.h:
-
-/usr/include/c++/15/bits/ostream_insert.h:
-
-/usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h:
-
-/usr/include/c++/15/bits/new_allocator.h:
-
-/usr/include/linux/sched/types.h:
-
-/usr/include/c++/15/bits/nested_exception.h:
-
-/usr/include/c++/15/bits/memoryfwd.h:
-
-/usr/include/c++/15/bits/invoke.h:
-
-/usr/include/c++/15/bits/hashtable.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
-
-/usr/include/c++/15/bits/stl_vector.h:
-
-/usr/include/c++/15/bits/functexcept.h:
-
-/usr/include/c++/15/ext/concurrence.h:
-
-/usr/include/c++/15/bits/exception_ptr.h:
-
-/usr/include/c++/15/bits/stringfwd.h:
-
-/usr/include/c++/15/bits/erase_if.h:
-
-/usr/include/c++/15/bits/enable_special_members.h:
-
-/usr/include/c++/15/bits/stl_tempbuf.h:
-
-/usr/include/c++/15/bits/deque.tcc:
-
-/usr/include/c++/15/compare:
-
-/usr/include/c++/15/bits/cxxabi_forced.h:
-
-/usr/include/c++/15/bits/cpp_type_traits.h:
-
-/usr/include/c++/15/bits/concept_check.h:
-
-/usr/include/c++/15/bits/charconv.h:
-
-/usr/include/c++/15/bits/char_traits.h:
-
-/usr/include/c++/15/bits/basic_string.tcc:
-
-/usr/include/c++/15/bits/atomic_lockfree_defines.h:
-
-/usr/include/c++/15/bits/allocated_ptr.h:
-
-/usr/include/c++/15/bits/alloc_traits.h:
-
-/usr/include/c++/15/bits/align.h:
-
-/usr/include/c++/15/backward/binders.h:
-
-/usr/include/c++/15/bits/allocator.h:
-
-/usr/include/c++/15/bit:
-
-/usr/include/asm-generic/posix_types.h:
-
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake:
 
 /usr/share/cmake-4.2/Modules/Internal/CheckFlagCommonConfig.cmake:
 
-/usr/include/c++/15/bits/functional_hash.h:
-
-/usr/share/cmake-4.2/Modules/GNUInstallDirs.cmake:
+/usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/controller/AppointmentController.h:
 
@@ -4268,15 +4121,19 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsDependencies.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
-
 /usr/include/c++/15/functional:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsConfigVersionImpl.cmake:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/AppointmentController.cpp:
 
+/usr/include/c++/15/bits/hashtable.h:
+
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicSbomGenerationHelpers.cmake:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h:
+
+/usr/include/c++/15/bits/new_allocator.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake:
 
@@ -4296,19 +4153,27 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersionImpl.cmake:
 
+/usr/lib/x86_64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake:
+
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h:
 
 /usr/include/c++/15/pstl/glue_memory_defs.h:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/model/GeneralPatient.cpp:
 
+/usr/include/c++/15/bits/stl_iterator.h:
+
 /usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusTargets.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicToolHelpers.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusTargets-none.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/FindWrapOpenGL.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake:
+/usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusConfigVersion.cmake:
 
@@ -4320,15 +4185,9 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsAdditionalTargetInfo.cmake:
 
-/usr/include/c++/15/array:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsTargets-none.cmake:
-
 /usr/include/c++/15/bits/hash_bytes.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/IAR-DetermineCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake:
 
@@ -4336,11 +4195,13 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake:
 
+/usr/share/cmake-4.2/Modules/FindThreads.cmake:
+
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreMacros.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/Clang-DetermineCompiler.cmake:
+/usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreConfigVersion.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake:
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
 
 /usr/include/sched.h:
 
@@ -4350,11 +4211,9 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/SearchEngine.cpp:
 
-/usr/include/c++/15/bits/node_handle.h:
-
-/usr/share/cmake-4.2/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
-
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreVersionlessAliasTargets.cmake:
+
+/usr/include/c++/15/bits/align.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicWalkLibsHelpers.cmake:
 
@@ -4363,12 +4222,6 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsAdditionalTargetInfo.cmake:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicToolHelpers.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:
 
 /usr/share/cmake-4.2/Modules/Platform/Linux-Initialize.cmake:
 
@@ -4384,27 +4237,13 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigVersion.cmake:
 
-/usr/include/c++/15/bits/postypes.h:
-
-/usr/share/cmake-4.2/Modules/CMakeCompilerIdDetection.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /usr/include/c++/15/concepts:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/TI-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/c++/15/string_view:
-
-/usr/share/cmake-4.2/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
-
-/usr/include/c++/15/bits/stl_raw_storage_iter.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigExtras.cmake:
+/usr/include/c++/15/bits/cxxabi_init_exception.h:
 
 /usr/share/cmake-4.2/Modules/Linker/GNU-CXX.cmake:
 
@@ -4414,13 +4253,15 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake:
 
+/usr/include/ctype.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicAndroidHelpers.cmake:
+
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicSbomPythonHelpers.cmake:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/model/PatientRecord.cpp:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtFeature.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeCXXCompilerABI.cpp:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake:
 
@@ -4428,11 +4269,17 @@ CMakeFiles/scapms_core.dir/src/utils/Validation.cpp.o: /home/bot/Downloads/c++\ 
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake:
 
+/usr/include/c++/15/bits/basic_string.tcc:
+
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/utils/Validation.cpp:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicSbomAttributionHelpers.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake:
+
+/usr/share/cmake-4.2/Modules/GNUInstallDirs.cmake:
+
+/usr/include/c++/15/bits/functional_hash.h:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/UndoCommands.cpp:
 
@@ -4444,13 +4291,19 @@ CMakeFiles/4.2.3/CMakeSystem.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/FindWrapVulkanHeaders.cmake:
 
+/usr/bin/cmake:
+
 /usr/include/c++/15/bits/atomic_base.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsVersionlessTargets.cmake:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/model/Appointment.cpp:
 
-/usr/share/cmake-4.2/Modules/Compiler/Cray-DetermineCompiler.cmake:
+/usr/include/c++/15/bits/requires_hosted.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusDependencies.cmake:
+
+/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/UndoManager.cpp:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/utils/IDGenerator.cpp:
 
@@ -4458,13 +4311,15 @@ CMakeFiles/4.2.3/CMakeSystem.cmake:
 
 /usr/share/cmake-4.2/Modules/Platform/Linker/Linux-GNU.cmake:
 
+/usr/include/c++/15/bits/node_handle.h:
+
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtFeatureCommon.cmake:
 
 CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/share/cmake-4.2/Modules/Compiler/GNU.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
+/usr/include/c++/15/bits/char_traits.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiTargets.cmake:
 
@@ -4472,21 +4327,19 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusVersionlessAliasTargets.cmake:
 
-/usr/include/c++/15/bits/cxxabi_init_exception.h:
-
-/usr/share/cmake-4.2/Modules/Compiler/GHS-DetermineCompiler.cmake:
-
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/model/Appointment.h:
+
+/usr/include/c++/15/ext/type_traits.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/FindWrapAtomic.cmake:
+
+/usr/share/cmake-4.2/Modules/Platform/Linux-GNU-CXX.cmake:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/resources/resources.qrc:
 
-/usr/include/c++/15/bits/memory_resource.h:
-
-/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/model/ClinicDatabase.cpp:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake:
-
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicSbomCycloneDXHelpers.cmake:
+
+/usr/include/c++/15/bits/stl_stack.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake:
 
@@ -4498,6 +4351,10 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/share/cmake-4.2/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
 
+/usr/include/c++/15/bits/stl_bvector.h:
+
+/usr/include/c++/15/bits/stl_pair.h:
+
 /usr/include/c++/15/vector:
 
 /usr/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake:
@@ -4508,19 +4365,11 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/share/cmake-4.2/Modules/CheckIncludeFileCXX.cmake:
 
-/usr/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:
-
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/controller/PatientCache.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtInstallPaths.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake:
-
-/usr/include/ctype.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicAndroidHelpers.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeParseImplicitIncludeInfo.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsConfigVersion.cmake:
 
@@ -4546,16 +4395,6 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsTargets.cmake:
 
-/usr/include/c++/15/bits/stl_heap.h:
-
-/usr/include/c++/15/bits/exception_defines.h:
-
-/usr/include/c++/15/backward/auto_ptr.h:
-
-/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/SortEngine.cpp:
-
-/usr/share/cmake-4.2/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake:
-
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/model/FollowUpPatient.cpp:
 
 /usr/include/c++/15/ext/aligned_buffer.h:
@@ -4566,25 +4405,25 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6VersionlessAliasTargets.cmake:
 
-/usr/include/c++/15/optional:
-
-/usr/include/c++/15/bits/predefined_ops.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicFindPackageHelpers.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreTargets-none.cmake:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/model/EmergencyPatient.cpp:
 
-/usr/share/cmake-4.2/Modules/Compiler/PathScale-DetermineCompiler.cmake:
+/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/PatientCache.cpp:
+
+/usr/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake:
+
+/usr/include/c++/15/backward/binders.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Targets.cmake:
 
-/usr/include/c++/15/bits/refwrap.h:
+/usr/include/c++/15/bits/enable_special_members.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicDependencyHelpers.cmake:
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/c++/15/bits/stl_iterator_base_funcs.h:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicFinalizerHelpers.cmake:
 
@@ -4596,11 +4435,11 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicGitHelpers.cmake:
 
+/usr/include/c++/15/bits/shared_ptr.h:
+
 /usr/include/c++/15/deque:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicCMakeEarlyPolicyHelpers.cmake:
 
@@ -4620,10 +4459,6 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsDependencies.cmake:
 
-/usr/include/c++/15/bits/std_abs.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicPluginHelpers_v2.cmake:
-
 /usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h:
 
 /usr/share/cmake-4.2/Modules/Linker/GNU.cmake:
@@ -4634,14 +4469,6 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreConfigExtras.cmake:
 
-/usr/include/c++/15/bits/basic_string.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsTargets-none.cmake:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerSupport.cmake:
-
 /usr/lib/x86_64-linux-gnu/cmake/Qt6GuiTools/Qt6GuiToolsConfig.cmake:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfig.cmake:
@@ -4650,183 +4477,41 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/share/cmake-4.2/Modules/CMakeCXXInformation.cmake:
 
-/usr/include/c++/15/bits/stl_function.h:
-
-/usr/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
-
-/usr/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:
-
-/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/PatientCache.cpp:
-
-/usr/share/cmake-4.2/Modules/Internal/CMakeCommonLinkerInformation.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/GNU-FindBinUtils.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
-/usr/share/cmake-4.2/Modules/Internal/FeatureTesting.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake:
-
-/usr/share/cmake-4.2/Modules/FindOpenGL.cmake:
-
-/usr/include/c++/15/bits/shared_ptr_atomic.h:
-
-/usr/share/cmake-4.2/Modules/CMakeGenericSystem.cmake:
-
-/usr/include/c++/15/bits/move.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiDependencies.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeParseImplicitLinkInfo.cmake:
-
-/usr/share/cmake-4.2/Modules/FindThreads.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeParseLibraryArchitecture.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeSystem.cmake.in:
-
-/usr/share/cmake-4.2/Modules/CMakeCXXCompiler.cmake.in:
-
-/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake:
-
 /usr/share/cmake-4.2/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake:
-
-/usr/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/utils/IDGenerator.h:
 
 /usr/share/cmake-4.2/Modules/CMakeFindDependencyMacro.cmake:
 
-/usr/share/cmake-4.2/Modules/CMakeTestCompilerCommon.cmake:
+/usr/lib/x86_64-linux-gnu/cmake/Qt6Gui/Qt6GuiDependencies.cmake:
 
-/usr/share/cmake-4.2/Modules/CMakeUnixFindMake.cmake:
+/usr/include/c++/15/bits/move.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusDependencies.cmake:
-
-/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/UndoManager.cpp:
-
-/usr/share/cmake-4.2/Modules/Compiler/Intel-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/asm-generic/types.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/share/cmake-4.2/Modules/CheckCXXCompilerFlag.cmake:
-
-/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/utils/ClinicException.h:
-
-/usr/include/c++/15/bits/exception.h:
-
-/usr/share/cmake-4.2/Modules/CheckLibraryExists.cmake:
-
-/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/model/PatientRecord.h:
-
-/usr/share/cmake-4.2/Modules/Compiler/ADSP-DetermineCompiler.cmake:
-
-/usr/include/c++/15/ext/type_traits.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/FindWrapAtomic.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6DBus/Qt6DBusConfigVersionImpl.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/Borland-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
-/usr/share/cmake-4.2/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake:
+/usr/share/cmake-4.2/Modules/CMakeInitializeConfigs.cmake:
 
 /usr/include/c++/15/bits/uses_allocator.h:
 
 /usr/share/cmake-4.2/Modules/CMakeSystemSpecificInformation.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
+/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/model/PatientRecord.h:
 
-/usr/share/cmake-4.2/Modules/Platform/Linux-GNU.cmake:
+/usr/share/cmake-4.2/Modules/CMakeSystemSpecificInitialize.cmake:
 
-/usr/share/cmake-4.2/Modules/Platform/Linux-GNU-CXX.cmake:
+/usr/share/cmake-4.2/Modules/CheckCXXCompilerFlag.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/Diab-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake:
+/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/utils/ClinicException.h:
 
 /usr/share/cmake-4.2/Modules/Compiler/GNU-CXX.cmake:
 
-/usr/share/cmake-4.2/Modules/Compiler/HP-CXX-DetermineCompiler.cmake:
+/usr/include/c++/15/bits/stl_tempbuf.h:
 
-/usr/share/cmake-4.2/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
+/usr/include/c++/15/bits/deque.tcc:
 
-/usr/share/cmake-4.2/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
+/usr/lib/x86_64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsConfigVersion.cmake:
 
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+/usr/share/cmake-4.2/Modules/FindOpenGL.cmake:
 
-/usr/include/c++/15/bits/stl_iterator_base_funcs.h:
-
-/usr/share/cmake-4.2/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6DBusTools/Qt6DBusToolsConfig.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/PGI-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/Renesas-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Platform/Linux.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/MSVC-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/TIClang-DetermineCompiler.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/Tasking-DetermineCompiler.cmake:
-
-/usr/bin/cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/Watcom-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
-
-/usr/share/cmake-4.2/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
-
-/usr/include/c++/15/bits/stl_relops.h:
-
-/usr/include/c++/15/bits/stl_algobase.h:
-
-/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicTargetHelpers.cmake:
-
-/usr/share/cmake-4.2/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake:
+/usr/include/c++/15/bits/invoke.h:
 
 /usr/include/linux/types.h:
 
@@ -4842,13 +4527,17 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/include/asm-generic/int-ll64.h:
 
+/usr/include/c++/15/bits/memoryfwd.h:
+
 /usr/share/cmake-4.2/Modules/Internal/CMakeCXXLinkerInformation.cmake:
 
-/usr/include/pthread.h:
-
-/usr/share/cmake-4.2/Modules/Internal/CMakeInspectCXXLinker.cmake:
+/usr/include/c++/15/bits/std_function.h:
 
 /usr/share/cmake-4.2/Modules/Internal/CheckCompilerFlag.cmake:
+
+/usr/include/c++/15/bits/allocated_ptr.h:
+
+/usr/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:
 
 /usr/include/features-time64.h:
 
@@ -4856,9 +4545,11 @@ CMakeFiles/4.2.3/CMakeCXXCompiler.cmake:
 
 /usr/share/cmake-4.2/Modules/MacroAddFileDependencies.cmake:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt6Core/Qt6CoreConfigVersion.cmake:
+/usr/share/cmake-4.2/Modules/Platform/Linux-GNU.cmake:
 
-/usr/share/cmake-4.2/Modules/Platform/Linux-Determine-CXX.cmake:
+/usr/include/c++/15/bits/range_access.h:
+
+/usr/share/cmake-4.2/Modules/Platform/Linux.cmake:
 
 /usr/include/c++/15/ext/string_conversions.h:
 
@@ -4896,12 +4587,132 @@ scapms_core_autogen/mocs_compilation.cpp:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/utils/Validation.h:
 
-/usr/share/cmake-4.2/Modules/Compiler/SCO-DetermineCompiler.cmake:
+/usr/include/c++/15/compare:
+
+/usr/include/c++/15/bits/cxxabi_forced.h:
 
 /usr/include/alloca.h:
 
 /usr/include/asm-generic/errno-base.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsConfigVersionImpl.cmake:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/asm-generic/types.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsTargets-none.cmake:
+
+/usr/include/c++/15/array:
+
+/usr/include/c++/15/bits/alloc_traits.h:
+
+/usr/include/c++/15/bits/stringfwd.h:
+
+/usr/include/c++/15/bits/erase_if.h:
+
+/usr/include/c++/15/bit:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/15/bits/allocator.h:
+
+/usr/include/c++/15/bits/atomic_lockfree_defines.h:
+
+/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/model/ClinicDatabase.cpp:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake:
+
+/usr/include/c++/15/bits/memory_resource.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6Widgets/Qt6WidgetsTargets-none.cmake:
+
+/usr/include/c++/15/bits/basic_string.h:
+
+/usr/include/c++/15/bits/cpp_type_traits.h:
+
+/usr/include/c++/15/bits/charconv.h:
+
+/usr/include/c++/15/bits/concept_check.h:
+
+/usr/share/cmake-4.2/Modules/CheckLibraryExists.cmake:
+
+/usr/include/c++/15/bits/exception.h:
+
+/usr/include/c++/15/bits/stl_heap.h:
+
+/usr/include/c++/15/backward/auto_ptr.h:
+
+/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/src/controller/SortEngine.cpp:
+
+/usr/include/c++/15/bits/exception_defines.h:
+
+/usr/include/c++/15/optional:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicFindPackageHelpers.cmake:
+
+/usr/include/c++/15/bits/predefined_ops.h:
+
+/usr/include/c++/15/ext/concurrence.h:
+
+/usr/include/c++/15/bits/exception_ptr.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/c++/15/bits/stl_vector.h:
+
+/usr/include/c++/15/bits/functexcept.h:
+
+/usr/include/linux/sched/types.h:
+
+/usr/include/c++/15/bits/nested_exception.h:
+
+/usr/include/c++/15/bits/ostream_insert.h:
+
+/usr/include/c++/15/bits/postypes.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicDependencyHelpers.cmake:
+
+/usr/include/c++/15/bits/refwrap.h:
+
+/usr/share/cmake-4.2/Modules/CMakeGenericSystem.cmake:
+
+/usr/include/c++/15/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/15/bits/stl_uninitialized.h:
+
+/usr/include/c++/15/bits/shared_ptr_base.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicPluginHelpers_v2.cmake:
+
+/usr/include/c++/15/bits/std_abs.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/QtPublicTargetHelpers.cmake:
+
+/usr/include/c++/15/bits/stl_relops.h:
+
+/usr/include/c++/15/bits/stl_algobase.h:
+
+/home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/model/EmergencyPatient.h:
+
+/usr/include/c++/15/bits/ptr_traits.h:
+
+/usr/include/c++/15/bits/stl_construct.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/c++/15/bits/stl_deque.h:
+
+/usr/include/c++/15/bits/stl_function.h:
+
+/usr/include/c++/15/bits/stl_iterator_base_types.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigExtras.cmake:
+
+/usr/include/c++/15/bits/stl_raw_storage_iter.h:

@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/scapms_tests.dir/tests/appointment_tests.cpp.o.d"
   "CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.o"
   "CMakeFiles/scapms_tests.dir/tests/file_report_tests.cpp.o.d"
+  "CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o"
+  "CMakeFiles/scapms_tests.dir/tests/fuzz_tests.cpp.o.d"
   "CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o"
   "CMakeFiles/scapms_tests.dir/tests/model_tests.cpp.o.d"
   "CMakeFiles/scapms_tests.dir/tests/queue_undo_tests.cpp.o"

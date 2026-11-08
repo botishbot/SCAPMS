@@ -69,7 +69,7 @@ AdminPage::AdminPage(QWidget* parent) : QWidget(parent) {
     demoLay->setSpacing(8);
     auto* demoTitle = new QLabel(tr("Demo data"), demoCard);
     demoTitle->setObjectName("SectionTitle");
-    auto* demoText = new QLabel(tr("Fills the clinic with fictional patients, services and appointments so you can "
+    auto* demoText = new QLabel(tr("Fills the clinic with 30 fictional patients, with services and appointments, so you can "
                                    "try every feature. If there is data already, you are asked before it is replaced. "
                                    "Demo data is never mixed with real records."), demoCard);
     demoText->setObjectName("Muted");
