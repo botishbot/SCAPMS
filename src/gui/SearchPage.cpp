@@ -36,7 +36,7 @@ using utils::ClinicException;
 
 namespace {
 
-enum Column { ColId, ColName, ColAge, ColCategory, ColPriority, ColContact, ColAppointments, ColCount };
+enum Column { ColId, ColName, ColAge, ColCategory, ColPriority, ColPhone, ColEmail, ColAppointments, ColCount };
 
 QString q(const std::string& s) { return QString::fromUtf8(s.c_str()); }
 
@@ -72,7 +72,7 @@ void SearchPage::buildUi() {
     m_table = new QTableWidget(0, ColCount, this);
     m_table->setObjectName("SearchResultsTable");
     m_table->setHorizontalHeaderLabels({tr("ID"), tr("Name"), tr("Age"), tr("Category"), tr("Priority"),
-                                        tr("Contact"), tr("Appts")});
+                                        tr("Phone"), tr("Email"), tr("Appts")});
     m_table->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_table->setSelectionMode(QAbstractItemView::SingleSelection);
     m_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -82,8 +82,8 @@ void SearchPage::buildUi() {
     m_table->verticalHeader()->setVisible(false);
     m_table->verticalHeader()->setDefaultSectionSize(40);
     // Match the Patients table so search results remain familiar and equally readable.
-    configureResizableTable(m_table, {104, 190, 66, 112, 100, 170, 74},
-                            {88, 140, 58, 96, 90, 130, 64});
+    configureResizableTable(m_table, {104, 190, 66, 112, 100, 145, 190, 74},
+                            {88, 140, 58, 96, 90, 115, 130, 64});
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &SearchPage::onSelectionChanged);
     left->addWidget(m_table, 1);
 
@@ -320,12 +320,14 @@ void SearchPage::fillTable() {
         };
         put(ColId, q(p.id()));
         m_table->item(r, ColId)->setData(Qt::UserRole, q(p.id()));
-        put(ColName, q(p.name()));
+        put(ColName, q(p.name()), false, true);
         put(ColAge, QString::number(p.age()), false, true);
         put(ColCategory, q(p.categoryName()), true, true);
         put(ColPriority, q(p.priorityLabel()), true, true);
-        put(ColContact, q(p.contactSummary()));
-        m_table->item(r, ColContact)->setToolTip(q(p.contactSummary()));
+        put(ColPhone, q(p.phone()), false, true);
+        put(ColEmail, q(p.email()), false, true);
+        m_table->item(r, ColPhone)->setToolTip(q(p.phone()));
+        m_table->item(r, ColEmail)->setToolTip(q(p.email()));
         put(ColAppointments, QString::number(p.appointments().size()), false, true);
     }
     m_table->blockSignals(false);
