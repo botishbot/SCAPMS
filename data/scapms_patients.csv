@@ -1,11 +1,31 @@
 Patient ID,Name,Age,Category,Priority,Phone,Email,Details,Appointments,Completed,Pending
-P-0001,Amara Okafor,34,General,Normal,0803 555 0101,amara.okafor@example.com,Routine patient,4,3,1
-P-0002,Tunde Bakare,8,Emergency,High Priority,0803 555 0102,,Triage level 1 (Critical),2,2,0
-P-0003,Ngozi Eze,52,Follow-Up,Scheduled,0803 555 0103,,Previous visit 2026-10-13 - Blood pressure review,3,2,1
-P-0004,Ibrahim Musa,67,General,Normal,0803 555 0104,,Routine patient,3,2,1
-P-0005,Folake Adeyemi,29,General,Normal,,folake.adeyemi@example.com,Routine patient,2,0,1
-P-0006,Chinedu Nwosu,41,Emergency,High Priority,0803 555 0106,,Triage level 2 (Urgent),1,0,1
-P-0007,Zainab Lawal,5,General,Normal,0803 555 0107,,Routine patient,1,0,1
-P-0008,Emeka Obi,58,Follow-Up,Scheduled,0803 555 0108,,Previous visit 2026-10-24 - Diabetes follow-up,2,1,1
-P-0009,Halima Sani,23,General,Normal,0803 555 0109,halima.sani@example.com,Routine patient,2,0,1
-P-0010,Segun Ajayi,36,Follow-Up,Scheduled,0803 555 0110,,Previous visit 2026-10-03 - Post-treatment check,2,1,1
+"P-0001","Amara Okafor","34","General","Normal","0803 555 0101","amara.okafor@example.com","Routine patient","4","3","1"
+"P-0002","Tunde Bakare","8","Emergency","High Priority","0803 555 0102","","Triage level 1","2","2","0"
+"P-0003","Ngozi Eze","52","FollowUp","Scheduled","0803 555 0103","","Previous visit 2026-10-08 - Blood pressure review","3","2","1"
+"P-0004","Ibrahim Musa","67","General","Normal","0803 555 0104","","Routine patient","3","2","1"
+"P-0005","Folake Adeyemi","29","General","Normal","","folake.adeyemi@example.com","Routine patient","2","0","1"
+"P-0006","Chinedu Nwosu","41","Emergency","High Priority","0803 555 0106","","Triage level 2","1","0","1"
+"P-0007","Zainab Lawal","5","General","Normal","0803 555 0107","","Routine patient","1","0","1"
+"P-0008","Emeka Obi","58","FollowUp","Scheduled","0803 555 0108","","Previous visit 2026-10-19 - Diabetes follow-up","2","1","1"
+"P-0009","Halima Sani","23","General","Normal","0803 555 0109","halima.sani@example.com","Routine patient","2","0","1"
+"P-0010","Segun Ajayi","36","FollowUp","Scheduled","0803 555 0110","","Previous visit 2026-09-28 - Post-treatment check","2","1","1"
+"P-0011","Bisi Adewale","27","General","Normal","0803 555 0111","bisi.adewale@example.com","Routine patient","1","0","1"
+"P-0012","Kelechi Okafor","45","Emergency","High Priority","0803 555 0112","","Triage level 1","1","1","0"
+"P-0013","Amina Bello","33","FollowUp","Scheduled","0803 555 0113","amina.bello@example.com","Previous visit 2026-10-20 - Blood pressure review","1","0","1"
+"P-0014","Tobi Akinyemi","19","General","Normal","0803 555 0114","","Routine patient","1","1","0"
+"P-0015","Chiamaka Nwankwo","61","Emergency","High Priority","0803 555 0115","chiamaka.n@example.com","Triage level 2","1","0","1"
+"P-0016","Yusuf Ibrahim","52","FollowUp","Scheduled","0803 555 0116","","Previous visit 2026-10-20 - Diabetes follow-up","1","1","0"
+"P-0017","Damilola Ojo","24","General","Normal","0803 555 0117","damilola.ojo@example.com","Routine patient","1","0","1"
+"P-0018","Obinna Eze","39","Emergency","High Priority","0803 555 0118","","Triage level 3","1","1","0"
+"P-0019","Fatima Abdullahi","48","FollowUp","Scheduled","0803 555 0119","fatima.a@example.com","Previous visit 2026-10-20 - Post-treatment review","1","0","1"
+"P-0020","Samuel Danjuma","30","General","Normal","0803 555 0120","","Routine patient","1","1","0"
+"P-0021","Ngozi Umeh","56","Emergency","High Priority","0803 555 0121","ngozi.umeh@example.com","Triage level 1","1","0","1"
+"P-0022","Peter Oladipo","42","FollowUp","Scheduled","0803 555 0122","","Previous visit 2026-10-20 - Medication review","1","1","0"
+"P-0023","Zara Suleiman","21","General","Normal","0803 555 0123","zara.s@example.com","Routine patient","1","0","1"
+"P-0024","Emmanuel Chukwu","68","Emergency","High Priority","0803 555 0124","","Triage level 2","1","1","0"
+"P-0025","Adaeze Nnamdi","36","FollowUp","Scheduled","0803 555 0125","adaeze.n@example.com","Previous visit 2026-10-20 - Follow-up consultation","1","0","1"
+"P-0026","Mustapha Garba","29","General","Normal","0803 555 0126","","Routine patient","1","1","0"
+"P-0027","Kemi Balogun","50","Emergency","High Priority","0803 555 0127","kemi.b@example.com","Triage level 3","1","0","1"
+"P-0028","Ifeanyi Obi","44","FollowUp","Scheduled","0803 555 0128","","Previous visit 2026-10-20 - Blood test review","1","1","0"
+"P-0029","Maryam Usman","31","General","Normal","0803 555 0129","maryam.usman@example.com","Routine patient","1","0","1"
+"P-0030","David Ekanem","63","Emergency","High Priority","0803 555 0130","","Triage level 1","1","1","0"
