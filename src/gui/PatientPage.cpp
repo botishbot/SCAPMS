@@ -32,7 +32,7 @@ using model::PatientRecord;
 
 namespace {
 
-enum Column { ColId, ColName, ColAge, ColCategory, ColPriority, ColContact, ColAppointments, ColCount };
+enum Column { ColId, ColName, ColAge, ColCategory, ColPriority, ColPhone, ColEmail, ColAppointments, ColCount };
 
 struct Look { QColor rowBg; QColor badgeBg; QColor badgeFg; };
 
@@ -71,7 +71,7 @@ void PatientPage::buildUi() {
     m_table = new QTableWidget(0, ColCount, this);
     m_table->setObjectName("PatientTable");
     m_table->setHorizontalHeaderLabels({tr("ID"), tr("Name"), tr("Age"), tr("Category"), tr("Priority"),
-                                        tr("Contact"), tr("Appts")});
+                                        tr("Phone"), tr("Email"), tr("Appts")});
     m_table->setSelectionBehavior(QAbstractItemView::SelectRows);
     m_table->setSelectionMode(QAbstractItemView::SingleSelection);
     m_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -81,8 +81,8 @@ void PatientPage::buildUi() {
     m_table->verticalHeader()->setDefaultSectionSize(40);
     m_table->setSortingEnabled(false);  // sorting is done by SortEngine, not by Qt's header sort
     // All columns remain user-resizable; the shared helper remembers each width.
-    configureResizableTable(m_table, {104, 190, 66, 112, 100, 170, 74},
-                            {88, 140, 58, 96, 90, 130, 64});
+    configureResizableTable(m_table, {104, 190, 66, 112, 100, 145, 190, 74},
+                            {88, 140, 58, 96, 90, 115, 130, 64});
     m_table->setToolTip(tr("Select a patient to view or edit their details."));
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &PatientPage::onSelectionChanged);
     left->addWidget(m_table, 1);
@@ -243,12 +243,14 @@ void PatientPage::fillTable() {
         };
         put(ColId, q(p.id()));
         m_table->item(r, ColId)->setData(Qt::UserRole, q(p.id()));
-        put(ColName, q(p.name()));
+        put(ColName, q(p.name()), false, true);
         put(ColAge, QString::number(p.age()), false, true);
         put(ColCategory, q(p.categoryName()), true, true);
         put(ColPriority, q(p.priorityLabel()), true, true);
-        put(ColContact, q(p.contactSummary()));
-        m_table->item(r, ColContact)->setToolTip(q(p.contactSummary()));
+        put(ColPhone, q(p.phone()), false, true);
+        put(ColEmail, q(p.email()), false, true);
+        m_table->item(r, ColPhone)->setToolTip(q(p.phone()));
+        m_table->item(r, ColEmail)->setToolTip(q(p.email()));
         put(ColAppointments, QString::number(p.appointments().size()), false, true);
     }
     m_table->blockSignals(false);
