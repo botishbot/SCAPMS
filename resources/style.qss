@@ -37,7 +37,10 @@ QPushButton#Danger { color: #B42318; border: 1px solid #F0B4AE; }
 QPushButton#Danger:hover { background: #FEF3F2; }
 QPushButton#Danger:disabled { color: #B9C3C9; border: 1px solid #DCE4E8; }
 QTableWidget { background: #FFFFFF; border: 1px solid #DCE4E8; border-radius: 8px; gridline-color: #EEF2F4; selection-background-color: #CDEBEE; selection-color: #12343B; }
-QHeaderView::section { background: #F4F7F9; color: #3C4A53; border: none; border-bottom: 1px solid #DCE4E8; padding: 8px 10px; font-weight: 600; }
+QTableWidget::item { padding: 6px 10px; }
+QHeaderView::section { background: #F4F7F9; color: #3C4A53; border: none; border-right: 1px solid #E3E9EC; border-bottom: 1px solid #DCE4E8; padding: 9px 12px; font-weight: 600; }
+QHeaderView::section:hover { background: #EAF3F4; }
+QHeaderView::section:pressed { background: #DDEDEF; }
 
 QDateTimeEdit { background: #FFFFFF; border: 1px solid #C5D1D7; border-radius: 6px; padding: 5px 10px; }
 QDateTimeEdit:focus { border: 1px solid #1F8A94; }
