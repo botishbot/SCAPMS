@@ -1,5 +1,6 @@
 #include "gui/QueuePage.h"
 
+#include "gui/TableSupport.h"
 #include "utils/ClinicException.h"
 #include "utils/Validation.h"
 
@@ -118,12 +119,8 @@ void QueuePage::buildUi() {
     m_table->setSortingEnabled(false);  // the queue order is first in, first out and must not change
     m_table->verticalHeader()->setVisible(false);
     m_table->verticalHeader()->setDefaultSectionSize(40);
-    m_table->horizontalHeader()->setSectionResizeMode(ColPatient, QHeaderView::Stretch);
-    for (int c : {ColPos, ColCategory, ColPriority, ColJoined, ColWaiting})
-        m_table->horizontalHeader()->setSectionResizeMode(c, QHeaderView::ResizeToContents);
-    m_table->horizontalHeader()->setSectionResizeMode(ColService, QHeaderView::Interactive);  // long service names are cut with "..."
-    m_table->horizontalHeader()->resizeSection(ColService, 105);
-    m_table->setTextElideMode(Qt::ElideRight);
+    configureResizableTable(m_table, {55, 170, 110, 105, 140, 145, 100},
+                            {48, 130, 90, 90, 110, 120, 85});
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &QueuePage::onSelectionChanged);
     left->addWidget(m_table, 1);
 
