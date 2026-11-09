@@ -3,10 +3,25 @@
 #include <QHeaderView>
 #include <QSettings>
 #include <QSignalBlocker>
+#include <QStyledItemDelegate>
+#include <QStyleOptionViewItem>
 #include <QTableWidget>
 #include <QVariant>
 
 namespace scapms::gui {
+
+namespace {
+class CenteredTableItemDelegate final : public QStyledItemDelegate {
+public:
+    using QStyledItemDelegate::QStyledItemDelegate;
+
+protected:
+    void initStyleOption(QStyleOptionViewItem* option, const QModelIndex& index) const override {
+        QStyledItemDelegate::initStyleOption(option, index);
+        option->displayAlignment = Qt::AlignCenter;
+    }
+};
+} // namespace
 
 // Shared table behaviour for every data table in SCAPMS.
 // Widths are user-adjustable and persisted independently by the table's object name.
@@ -18,6 +33,11 @@ inline void configureResizableTable(QTableWidget* table,
 
     auto* header = table->horizontalHeader();
     const int columns = table->columnCount();
+
+    // Apply one alignment rule to every cell and every header in every shared table.
+    // A delegate changes presentation only; it does not alter stored values or table behaviour.
+    table->setItemDelegate(new CenteredTableItemDelegate(table));
+    header->setDefaultAlignment(Qt::AlignCenter);
     QList<int> minimums;
     minimums.reserve(columns);
     for (int column = 0; column < columns; ++column) {
