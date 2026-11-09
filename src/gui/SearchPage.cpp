@@ -1,5 +1,6 @@
 #include "gui/SearchPage.h"
 
+#include "gui/TableSupport.h"
 #include "utils/ClinicException.h"
 
 #include <QAbstractItemView>
@@ -80,15 +81,9 @@ void SearchPage::buildUi() {
     m_table->setSortingEnabled(false);  // ordering comes only from our own Selection / Insertion Sort
     m_table->verticalHeader()->setVisible(false);
     m_table->verticalHeader()->setDefaultSectionSize(40);
-    m_table->horizontalHeader()->setSectionResizeMode(ColName, QHeaderView::Stretch);
-    for (int c : {ColId, ColAge, ColCategory, ColPriority, ColAppointments})
-        m_table->horizontalHeader()->setSectionResizeMode(c, QHeaderView::ResizeToContents);
-    // Contact can be long (phone + email): fixed width, text is cut with "..." and the full text is a tooltip,
-    // so the Name column always keeps its room.
-    m_table->horizontalHeader()->setSectionResizeMode(ColContact, QHeaderView::Interactive);
-    m_table->horizontalHeader()->resizeSection(ColContact, 135);
-    m_table->setTextElideMode(Qt::ElideRight);
-    m_table->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // Match the Patients table so search results remain familiar and equally readable.
+    configureResizableTable(m_table, {104, 190, 66, 112, 100, 170, 74},
+                            {88, 140, 58, 96, 90, 130, 64});
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &SearchPage::onSelectionChanged);
     left->addWidget(m_table, 1);
 
