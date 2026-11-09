@@ -1,5 +1,6 @@
 #include "gui/AppointmentPage.h"
 
+#include "gui/TableSupport.h"
 #include "gui/ServiceDialog.h"
 #include "utils/ClinicException.h"
 #include "utils/Validation.h"
@@ -111,9 +112,8 @@ void AppointmentPage::buildUi() {
     m_table->setSortingEnabled(false);  // rows are ordered by the application, not by Qt's header sort
     m_table->verticalHeader()->setVisible(false);
     m_table->verticalHeader()->setDefaultSectionSize(40);
-    m_table->horizontalHeader()->setSectionResizeMode(ColReason, QHeaderView::Stretch);
-    for (int c : {ColId, ColPatient, ColService, ColWhen, ColStatus})
-        m_table->horizontalHeader()->setSectionResizeMode(c, QHeaderView::ResizeToContents);
+    configureResizableTable(m_table, {100, 170, 145, 145, 105, 190},
+                            {88, 130, 110, 120, 90, 130});
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &AppointmentPage::onSelectionChanged);
     left->addWidget(m_table, 1);
     root->addLayout(left, 1);
