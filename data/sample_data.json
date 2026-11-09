@@ -1,7 +1,6 @@
 {
     "format": "SCAPMS",
-    "history": [
-    ],
+    "history": [],
     "patients": [
         {
             "age": 34,
@@ -308,6 +307,405 @@
             "name": "Segun Ajayi",
             "phone": "0803 555 0110",
             "previousVisitDate": "2026-09-28"
+        },
+        {
+            "id": "P-0011",
+            "name": "Bisi Adewale",
+            "age": 27,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-10 09:00",
+                    "id": "A-0023",
+                    "outcomeNote": "",
+                    "reason": "Routine check-up",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "bisi.adewale@example.com",
+            "phone": "0803 555 0111"
+        },
+        {
+            "id": "P-0012",
+            "name": "Kelechi Okafor",
+            "age": 45,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-10 10:00",
+                    "id": "A-0024",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "Severe abdominal pain",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                }
+            ],
+            "category": "Emergency",
+            "email": "",
+            "phone": "0803 555 0112",
+            "triageLevel": 1
+        },
+        {
+            "id": "P-0013",
+            "name": "Amina Bello",
+            "age": 33,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-11 09:30",
+                    "id": "A-0025",
+                    "outcomeNote": "",
+                    "reason": "Blood pressure review",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Pending"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "amina.bello@example.com",
+            "phone": "0803 555 0113",
+            "followUpReason": "Blood pressure review",
+            "previousVisitDate": "2026-10-20"
+        },
+        {
+            "id": "P-0014",
+            "name": "Tobi Akinyemi",
+            "age": 19,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-11 11:00",
+                    "id": "A-0026",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "General consultation",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                }
+            ],
+            "category": "General",
+            "email": "",
+            "phone": "0803 555 0114"
+        },
+        {
+            "id": "P-0015",
+            "name": "Chiamaka Nwankwo",
+            "age": 61,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-12 08:30",
+                    "id": "A-0027",
+                    "outcomeNote": "",
+                    "reason": "Breathing difficulty",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "Emergency",
+            "email": "chiamaka.n@example.com",
+            "phone": "0803 555 0115",
+            "triageLevel": 2
+        },
+        {
+            "id": "P-0016",
+            "name": "Yusuf Ibrahim",
+            "age": 52,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-12 12:00",
+                    "id": "A-0028",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "Diabetes follow-up",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Completed"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "",
+            "phone": "0803 555 0116",
+            "followUpReason": "Diabetes follow-up",
+            "previousVisitDate": "2026-10-20"
+        },
+        {
+            "id": "P-0017",
+            "name": "Damilola Ojo",
+            "age": 24,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-13 09:00",
+                    "id": "A-0029",
+                    "outcomeNote": "",
+                    "reason": "Routine check-up",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "damilola.ojo@example.com",
+            "phone": "0803 555 0117"
+        },
+        {
+            "id": "P-0018",
+            "name": "Obinna Eze",
+            "age": 39,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-13 10:30",
+                    "id": "A-0030",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "Road traffic injury",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                }
+            ],
+            "category": "Emergency",
+            "email": "",
+            "phone": "0803 555 0118",
+            "triageLevel": 3
+        },
+        {
+            "id": "P-0019",
+            "name": "Fatima Abdullahi",
+            "age": 48,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-14 09:30",
+                    "id": "A-0031",
+                    "outcomeNote": "",
+                    "reason": "Post-treatment review",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Pending"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "fatima.a@example.com",
+            "phone": "0803 555 0119",
+            "followUpReason": "Post-treatment review",
+            "previousVisitDate": "2026-10-20"
+        },
+        {
+            "id": "P-0020",
+            "name": "Samuel Danjuma",
+            "age": 30,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-14 13:00",
+                    "id": "A-0032",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "General consultation",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                }
+            ],
+            "category": "General",
+            "email": "",
+            "phone": "0803 555 0120"
+        },
+        {
+            "id": "P-0021",
+            "name": "Ngozi Umeh",
+            "age": 56,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-15 08:00",
+                    "id": "A-0033",
+                    "outcomeNote": "",
+                    "reason": "High fever",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "Emergency",
+            "email": "ngozi.umeh@example.com",
+            "phone": "0803 555 0121",
+            "triageLevel": 1
+        },
+        {
+            "id": "P-0022",
+            "name": "Peter Oladipo",
+            "age": 42,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-15 11:00",
+                    "id": "A-0034",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "Medication review",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Completed"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "",
+            "phone": "0803 555 0122",
+            "followUpReason": "Medication review",
+            "previousVisitDate": "2026-10-20"
+        },
+        {
+            "id": "P-0023",
+            "name": "Zara Suleiman",
+            "age": 21,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-16 09:00",
+                    "id": "A-0035",
+                    "outcomeNote": "",
+                    "reason": "Routine check-up",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "zara.s@example.com",
+            "phone": "0803 555 0123"
+        },
+        {
+            "id": "P-0024",
+            "name": "Emmanuel Chukwu",
+            "age": 68,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-16 10:00",
+                    "id": "A-0036",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "Chest pain assessment",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                }
+            ],
+            "category": "Emergency",
+            "email": "",
+            "phone": "0803 555 0124",
+            "triageLevel": 2
+        },
+        {
+            "id": "P-0025",
+            "name": "Adaeze Nnamdi",
+            "age": 36,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-17 09:30",
+                    "id": "A-0037",
+                    "outcomeNote": "",
+                    "reason": "Follow-up consultation",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Pending"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "adaeze.n@example.com",
+            "phone": "0803 555 0125",
+            "followUpReason": "Follow-up consultation",
+            "previousVisitDate": "2026-10-20"
+        },
+        {
+            "id": "P-0026",
+            "name": "Mustapha Garba",
+            "age": 29,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-17 12:00",
+                    "id": "A-0038",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "General consultation",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                }
+            ],
+            "category": "General",
+            "email": "",
+            "phone": "0803 555 0126"
+        },
+        {
+            "id": "P-0027",
+            "name": "Kemi Balogun",
+            "age": 50,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-18 08:30",
+                    "id": "A-0039",
+                    "outcomeNote": "",
+                    "reason": "Injury assessment",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "Emergency",
+            "email": "kemi.b@example.com",
+            "phone": "0803 555 0127",
+            "triageLevel": 3
+        },
+        {
+            "id": "P-0028",
+            "name": "Ifeanyi Obi",
+            "age": 44,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-18 10:30",
+                    "id": "A-0040",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "Blood test review",
+                    "serviceId": "S-004",
+                    "serviceName": "Pharmacy Review",
+                    "status": "Completed"
+                }
+            ],
+            "category": "FollowUp",
+            "email": "",
+            "phone": "0803 555 0128",
+            "followUpReason": "Blood test review",
+            "previousVisitDate": "2026-10-20"
+        },
+        {
+            "id": "P-0029",
+            "name": "Maryam Usman",
+            "age": 31,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-19 09:00",
+                    "id": "A-0041",
+                    "outcomeNote": "",
+                    "reason": "Routine check-up",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Pending"
+                }
+            ],
+            "category": "General",
+            "email": "maryam.usman@example.com",
+            "phone": "0803 555 0129"
+        },
+        {
+            "id": "P-0030",
+            "name": "David Ekanem",
+            "age": 63,
+            "appointments": [
+                {
+                    "dateTime": "2026-11-19 11:00",
+                    "id": "A-0042",
+                    "outcomeNote": "Assessment completed",
+                    "reason": "Urgent assessment",
+                    "serviceId": "S-001",
+                    "serviceName": "General Consultation",
+                    "status": "Completed"
+                }
+            ],
+            "category": "Emergency",
+            "email": "",
+            "phone": "0803 555 0130",
+            "triageLevel": 1
         }
     ],
     "schemaVersion": 1,
