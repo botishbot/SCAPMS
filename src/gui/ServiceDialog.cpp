@@ -1,5 +1,6 @@
 #include "gui/ServiceDialog.h"
 
+#include "gui/TableSupport.h"
 #include "utils/ClinicException.h"
 
 #include <QAbstractItemView>
@@ -48,9 +49,7 @@ ServiceDialog::ServiceDialog(controller::AppointmentController& controller, QWid
     m_table->setWordWrap(false);
     m_table->setSortingEnabled(false);
     m_table->verticalHeader()->setVisible(false);
-    m_table->horizontalHeader()->setSectionResizeMode(ColDescription, QHeaderView::Stretch);
-    for (int c : {ColId, ColName, ColStatus})
-        m_table->horizontalHeader()->setSectionResizeMode(c, QHeaderView::ResizeToContents);
+    configureResizableTable(m_table, {90, 150, 280, 90}, {78, 120, 180, 80});
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &ServiceDialog::onSelectionChanged);
     root->addWidget(m_table, 1);
 
