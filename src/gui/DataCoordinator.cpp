@@ -11,6 +11,7 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QPushButton>
+#include <QSettings>
 #include <QStandardPaths>
 
 namespace scapms::gui {
@@ -18,11 +19,24 @@ namespace scapms::gui {
 using utils::ClinicException;
 using utils::FileHandler;
 
+namespace {
+const char* const kLastFileKey = "dataFile/lastPath";
+
+// The data file that was saved or loaded last time, so the program opens it again at the next start.
+// Returns an empty string if nothing is remembered or the file no longer exists.
+QString rememberedPath() {
+    const QString path = QSettings().value(kLastFileKey).toString();
+    return (!path.isEmpty() && QFileInfo::exists(path)) ? path : QString();
+}
+
+void rememberPath(const QString& path) { QSettings().setValue(kLastFileKey, path); }
+} // namespace
+
 DataCoordinator::DataCoordinator(model::ClinicDatabase& database, utils::IDGenerator& ids,
                                  controller::UndoManager& undo, controller::QueueManager& queue,
                                  controller::PatientCache& cache, QWidget* dialogParent, QObject* parent)
     : QObject(parent), m_database(database), m_ids(ids), m_undo(undo), m_queue(queue), m_cache(cache),
-      m_parent(dialogParent), m_path(defaultPath()) {}
+      m_parent(dialogParent), m_path(rememberedPath().isEmpty() ? defaultPath() : rememberedPath()) {}
 
 // The data file lives in the project's "data" folder when the program is run from the build folder
 // (project/build/SCAPMS), so the saved data stays next to the project. Otherwise it is kept in the
@@ -112,6 +126,7 @@ bool DataCoordinator::save() {
         showError(tr("Could not save"), tr("An unexpected error occurred. Nothing was changed."));
         return false;
     }
+    rememberPath(m_path);
     emit dataSaved();
     emit statusMessage(tr("Saved to %1").arg(QFileInfo(m_path).fileName()));
     return true;
@@ -132,6 +147,7 @@ bool DataCoordinator::saveAs() {
         return false;
     }
     m_path = path;
+    rememberPath(m_path);
     emit pathChanged();
     emit dataSaved();
     emit statusMessage(tr("Saved to %1").arg(QFileInfo(m_path).fileName()));
@@ -156,6 +172,7 @@ void DataCoordinator::load() {
     }
     resetSessionState();
     m_path = path;
+    rememberPath(m_path);
     emit pathChanged();
     emit dataReplaced(false);
     emit statusMessage(tr("Loaded %1").arg(QFileInfo(path).fileName()));

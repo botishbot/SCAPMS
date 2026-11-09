@@ -3099,10 +3099,12 @@ CMakeFiles/SCAPMS.dir/src/gui/DataCoordinator.cpp.o: /home/bot/Downloads/c++\ pr
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QByteArray \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QCoreApplication \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QDate \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QDir \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QFileInfo \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QSettings \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QStandardPaths \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QString \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q17memory.h \
@@ -3113,6 +3115,7 @@ CMakeFiles/SCAPMS.dir/src/gui/DataCoordinator.cpp.o: /home/bot/Downloads/c++\ pr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q20utility.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q23type_traits.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/q23utility.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qabstracteventdispatcher.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qalloc.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
@@ -3123,6 +3126,7 @@ CMakeFiles/SCAPMS.dir/src/gui/DataCoordinator.cpp.o: /home/bot/Downloads/c++\ pr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic_cxx11.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasicatomic.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbindingstorage.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
@@ -3141,13 +3145,18 @@ CMakeFiles/SCAPMS.dir/src/gui/DataCoordinator.cpp.o: /home/bot/Downloads/c++\ pr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdarwinhelpers.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatetime.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qdeadlinetimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdir.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qdirlisting.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qendian.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qeventloop.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qexceptionhandling.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfile.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qfiledevice.h \
@@ -3179,6 +3188,7 @@ CMakeFiles/SCAPMS.dir/src/gui/DataCoordinator.cpp.o: /home/bot/Downloads/c++\ pr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qminmax.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qnumeric.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject_impl.h \
@@ -3193,6 +3203,7 @@ CMakeFiles/SCAPMS.dir/src/gui/DataCoordinator.cpp.o: /home/bot/Downloads/c++\ pr
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopedpointer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopeguard.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qsettings.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
@@ -7123,6 +7134,8 @@ CMakeFiles/SCAPMS.dir/src/main.cpp.o: /home/bot/Downloads/c++\ pro/v2/SCAPMS_Dri
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qxptype_traits.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qyieldcpu.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QColor \
+  /usr/include/x86_64-linux-gnu/qt6/QtGui/QPalette \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qaction.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
   /usr/include/x86_64-linux-gnu/qt6/QtGui/qbrush.h \
@@ -7298,8 +7311,6 @@ CMakeFiles/SCAPMS.dir/src/gui/PatientPage.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libc_nonshared.a:
 
-/usr/lib/x86_64-linux-gnu/libbrotlidec.so.1:
-
 /usr/lib/x86_64-linux-gnu/libbrotlicommon.so.1:
 
 /usr/lib/x86_64-linux-gnu/libb2.so.1:
@@ -7348,6 +7359,8 @@ CMakeFiles/SCAPMS.dir/src/gui/SearchPage.cpp.o:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstylefactory.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtGui/QPalette:
+
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QRegularExpression:
 
 /home/bot/Downloads/c++\ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/include/controller/ReportGenerator.h:
@@ -7380,12 +7393,6 @@ CMakeFiles/SCAPMS.dir/src/gui/SearchPage.cpp.o:
 
 /usr/include/x86_64-linux-gnu/qt6/QtGui/QTransform:
 
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h:
-
-/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h:
-
 CMakeFiles/SCAPMS.dir/src/gui/AppointmentPage.cpp.o:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QTime:
@@ -7402,11 +7409,23 @@ CMakeFiles/SCAPMS.dir/src/gui/AppointmentPage.cpp.o:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qstandardpaths.h:
 
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qsettings.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qnativeinterface.h:
+
 /usr/include/x86_64-linux-gnu/qt6/QtCore/qdirlisting.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreevent.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/qcoreapplication_platform.h:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QStandardPaths:
 
 /usr/include/x86_64-linux-gnu/qt6/QtCore/QDate:
+
+/usr/lib/x86_64-linux-gnu/libbrotlidec.so.1:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QCoreApplication:
 
 /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtablewidget.h:
 
@@ -7519,6 +7538,8 @@ CMakeFiles/SCAPMS.dir/src/gui/AppointmentPage.cpp.o:
 /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h:
 
 /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h:
+
+/usr/include/x86_64-linux-gnu/qt6/QtCore/QSettings:
 
 /usr/include/wctype.h:
 
