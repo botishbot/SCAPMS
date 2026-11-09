@@ -1,5 +1,6 @@
 #include "gui/PatientPage.h"
 
+#include "gui/TableSupport.h"
 #include "model/EmergencyPatient.h"
 #include "model/FollowUpPatient.h"
 #include "utils/ClinicException.h"
@@ -79,17 +80,9 @@ void PatientPage::buildUi() {
     m_table->verticalHeader()->setVisible(false);
     m_table->verticalHeader()->setDefaultSectionSize(40);
     m_table->setSortingEnabled(false);  // sorting is done by SortEngine, not by Qt's header sort
-    m_table->horizontalHeader()->setStretchLastSection(false);
-    m_table->horizontalHeader()->setSectionResizeMode(ColName, QHeaderView::Stretch);
-    m_table->setWordWrap(false);
-    for (int c : {ColId, ColAge, ColCategory, ColPriority, ColAppointments})
-        m_table->horizontalHeader()->setSectionResizeMode(c, QHeaderView::ResizeToContents);
-    // Contact can be long (phone + email): fixed width, text is cut with "..." and the full text is a tooltip,
-    // so the Name column always keeps its room.
-    m_table->horizontalHeader()->setSectionResizeMode(ColContact, QHeaderView::Interactive);
-    m_table->horizontalHeader()->resizeSection(ColContact, 135);
-    m_table->setTextElideMode(Qt::ElideRight);
-    m_table->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    // All columns remain user-resizable; the shared helper remembers each width.
+    configureResizableTable(m_table, {104, 190, 66, 112, 100, 170, 74},
+                            {88, 140, 58, 96, 90, 130, 64});
     m_table->setToolTip(tr("Select a patient to view or edit their details."));
     connect(m_table, &QTableWidget::itemSelectionChanged, this, &PatientPage::onSelectionChanged);
     left->addWidget(m_table, 1);
