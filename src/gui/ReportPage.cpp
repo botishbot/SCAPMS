@@ -1,5 +1,6 @@
 #include "gui/ReportPage.h"
 
+#include "gui/TableSupport.h"
 #include "controller/ReportGenerator.h"
 #include "utils/ClinicException.h"
 #include "utils/FileHandler.h"
@@ -42,8 +43,13 @@ QTableWidget* makeTable(QWidget* parent, const char* name, const QStringList& he
     t->setSortingEnabled(false);
     t->verticalHeader()->setVisible(false);
     t->verticalHeader()->setDefaultSectionSize(32);
-    for (int c = 0; c < headers.size(); ++c)
-        t->horizontalHeader()->setSectionResizeMode(c, c == 1 ? QHeaderView::Stretch : QHeaderView::ResizeToContents);
+    QList<int> widths;
+    QList<int> minimums;
+    for (int c = 0; c < headers.size(); ++c) {
+        widths.push_back(c == 1 ? 210 : (c == 0 ? 84 : 130));
+        minimums.push_back(c == 1 ? 150 : (c == 0 ? 64 : 90));
+    }
+    configureResizableTable(t, widths, minimums, 620);
     t->setFrameShape(QFrame::NoFrame);
     t->setMinimumHeight(235);
     return t;
