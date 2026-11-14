@@ -3,6 +3,7 @@
 #include "controller/DemoData.h"
 #include "utils/ClinicException.h"
 #include "utils/FileHandler.h"
+#include "utils/AppDataPath.h"
 
 #include <QCoreApplication>
 #include <QDate>
@@ -26,7 +27,9 @@ const char* const kLastFileKey = "dataFile/lastPath";
 // Returns an empty string if nothing is remembered or the file no longer exists.
 QString rememberedPath() {
     const QString path = QSettings().value(kLastFileKey).toString();
-    return (!path.isEmpty() && QFileInfo::exists(path)) ? path : QString();
+    if (path.isEmpty() || utils::isLegacyProjectDataPath(path, QCoreApplication::applicationDirPath()))
+        return QString();
+    return QFileInfo::exists(path) ? path : QString();
 }
 
 void rememberPath(const QString& path) { QSettings().setValue(kLastFileKey, path); }
@@ -38,14 +41,9 @@ DataCoordinator::DataCoordinator(model::ClinicDatabase& database, utils::IDGener
     : QObject(parent), m_database(database), m_ids(ids), m_undo(undo), m_queue(queue), m_cache(cache),
       m_parent(dialogParent), m_path(rememberedPath().isEmpty() ? defaultPath() : rememberedPath()) {}
 
-// The data file lives in the project's "data" folder when the program is run from the build folder
-// (project/build/SCAPMS), so the saved data stays next to the project. Otherwise it is kept in the
-// per-user application data folder.
+// The normal application database is always stored in the current user's application-data folder.
 QString DataCoordinator::defaultPath() {
-    const QDir projectData(QCoreApplication::applicationDirPath() + "/../data");
-    if (projectData.exists() && QFileInfo(projectData.absolutePath()).isWritable())
-        return projectData.absoluteFilePath("scapms_data.json");
-    return QStandardPaths::writableLocation(QStandardPaths::AppDataLocation) + "/scapms_data.json";
+    return utils::applicationDataFilePath();
 }
 
 QString DataCoordinator::choose(bool forSave, const QString& caption, const QString& suggested, const QString& filter) {

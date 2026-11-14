@@ -6,6 +6,7 @@
 #include "test_support.h"
 #include "utils/FileHandler.h"
 #include "utils/IDGenerator.h"
+#include "utils/AppDataPath.h"
 #include "utils/Validation.h"
 
 #include <QDir>
@@ -95,6 +96,17 @@ void setPatient(QJsonObject& root, int i, const QJsonObject& p) {
     } while (0)
 
 } // namespace
+
+static void testApplicationDataPath() {
+    const QString appData = utils::applicationDataFilePath();
+    const QString expected = QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation))
+                                 .filePath("scapms_data.json");
+    CHECK_EQ(appData, expected);
+    CHECK(utils::isLegacyProjectDataPath("/opt/scapms/build/../data/scapms_data.json",
+                                         "/opt/scapms/build"));
+    CHECK(!utils::isLegacyProjectDataPath("/home/user/Documents/clinic.json",
+                                          "/opt/scapms/build"));
+}
 
 static void testDateArithmetic() {
     CHECK_EQ(v::addDays("2026-10-28", 0), std::string("2026-10-28"));
@@ -430,6 +442,7 @@ static void testUndoDescriptions() {
 }
 
 void runFileReportTests() {
+    testApplicationDataPath();
     testDateArithmetic();
     testDemoDataIsValid();
     testLargeDemoData();

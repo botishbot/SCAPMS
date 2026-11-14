@@ -236,7 +236,7 @@ The sorting options support name, ID and age. Search behaviour depends on the se
 
 ## 💾 Data storage and validation
 
-Application data is stored in JSON (schema version 1). The saved data includes patients and their appointments, clinic services, and appointment history for deleted patients. The waiting queue and undo history are runtime structures and are not saved as part of the JSON data file.
+Application data is stored in JSON (schema version 1) in the current user's application-data directory, separate from the executable, source code and download location. On Linux, this is typically under `~/.local/share/COS202/SCAPMS/`; on Windows, it is in the user's application-data location. The saved data includes patients and their appointments, clinic services, and appointment history for deleted patients. The waiting queue and undo history are runtime structures and are not saved as part of the JSON data file. Users can still choose another location through **Save As**.
 
 When data is loaded, the file is validated before replacing the current application data. Invalid JSON and invalid or inconsistent records are handled as errors; the documented loader is designed to leave the current data unchanged when validation fails.
 
