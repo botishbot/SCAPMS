@@ -412,8 +412,13 @@ void SearchPage::updateSelectedPatient() {
 // ---------------------------------------------------------------- search
 void SearchPage::onFieldChanged() {
     const bool isCategory = currentField() == SearchField::Category;
-    m_searchForm->setRowVisible(m_keyword, !isCategory);   // dynamic components: keyword box or category list
-    m_searchForm->setRowVisible(m_category, isCategory);
+    // Hide both the field and its label; this works with Qt 6.2 as well as newer Qt releases.
+    if (QWidget* keywordLabel = m_searchForm->labelForField(m_keyword))
+        keywordLabel->setVisible(!isCategory);
+    m_keyword->setVisible(!isCategory);
+    if (QWidget* categoryLabel = m_searchForm->labelForField(m_category))
+        categoryLabel->setVisible(isCategory);
+    m_category->setVisible(isCategory);
     updateAlgorithmChoices();
     if (isCategory) performSearch(false);
     else if (!m_keyword->text().trimmed().isEmpty()) performSearch(false);
