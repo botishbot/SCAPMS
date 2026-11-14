@@ -1,0 +1,39 @@
+# CMake build directories
+/build/
+/cmake-build-*/
+
+# Compiled binaries and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.app/
+*.AppImage
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+Testing/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.user
+*.suo
+*.cache
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local runtime data and backups
+*.bak
+*.tmp
