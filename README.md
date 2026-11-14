@@ -1,157 +1,171 @@
 # SCAPMS — Smart Clinic Appointment & Patient Management System
 
-> A desktop clinic-management application built with **C++17**, **Qt 6 Widgets** and **CMake**. SCAPMS brings patient records, appointments, waiting-list operations, search, sorting and clinic reports into one graphical application.
+A cross-platform desktop application built with **C++17, Qt 6 Widgets and CMake**. SCAPMS brings patient records, appointment scheduling, a first-in/first-out waiting queue, searching, sorting and clinic reports into one desktop workspace.
 
-![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
-![Qt](https://img.shields.io/badge/Qt-6-41CD52?style=for-the-badge&logo=qt&logoColor=white)
-![CMake](https://img.shields.io/badge/CMake-Build-064F8C?style=for-the-badge&logo=cmake&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Not%20specified-lightgrey?style=for-the-badge)
+**Personal software development project by George Oluwasemilore** — developed to strengthen and demonstrate practical C++, object-oriented programming, data structures, algorithms, GUI development, persistence and testing skills.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++17">
+  <img src="https://img.shields.io/badge/Qt-6-41CD52?style=for-the-badge&logo=qt&logoColor=white" alt="Qt 6">
+  <img src="https://img.shields.io/badge/CMake-Build-064F8C?style=for-the-badge&logo=cmake&logoColor=white" alt="CMake">
+  <img src="https://img.shields.io/badge/Windows-Linux-blue?style=for-the-badge" alt="Windows and Linux">
+</p>
 
 ---
 
 ## Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Screenshots](#-screenshots)
-- [Downloads](#-downloads)
-- [Technology stack](#-technology-stack)
-- [Getting started](#-getting-started)
-- [Building from source](#-building-from-source)
-- [Using the application](#-using-the-application)
-- [Architecture and object-oriented design](#-architecture-and-object-oriented-design)
-- [Data structures and algorithms](#-data-structures-and-algorithms)
-- [Data storage and validation](#-data-storage-and-validation)
-- [Project structure](#-project-structure)
-- [Testing](#-testing)
-- [Contributing](#-contributing)
-- [Author](#-author)
+- [Overview](#overview)
+- [Application screenshots](#application-screenshots)
+- [Features](#features)
+- [Technology](#technology)
+- [Architecture and OOP](#architecture-and-object-oriented-design)
+- [Data structures and algorithms](#data-structures-and-algorithms)
+- [Data storage](#data-storage)
+- [Download a release](#download-a-release)
+- [Build from source](#build-from-source)
+- [Run tests](#run-tests)
+- [Project structure](#project-structure)
+- [Project notes](#project-notes)
+- [Author](#author)
 
-## 📖 Overview
+## Overview
 
-The **Smart Clinic Appointment & Patient Management System (SCAPMS)** is a C++ desktop application developed to demonstrate how programming concepts can be applied to routine clinic operations. It provides a single graphical workspace for managing patient information, appointments and the waiting queue, while also demonstrating object-oriented design, manually implemented searching and sorting algorithms, recursion, data persistence and report generation.
+SCAPMS is an educational clinic-management application. It provides a graphical environment for maintaining patient records, scheduling appointments, managing a consultation queue and reviewing operational summaries.
 
-The application is organized into model, controller, GUI and utility components. This separation keeps patient and appointment data management distinct from the interface and makes the codebase easier to navigate and maintain.
+The project applies object-oriented programming and separates domain models, application controllers, GUI components and utilities. It also includes manually implemented searching and sorting algorithms, JSON persistence, CSV export, undo support and automated tests.
 
-SCAPMS is an educational project. It is not intended to replace a clinically validated electronic medical-record system or to store real patient information in a production environment.
+> **Scope note:** SCAPMS is a learning and portfolio project. It is not a clinically validated electronic medical-record system and must not be used to manage real patient information.
 
-## ✨ Features
+## Application screenshots
 
-### Patient management
-- Register and manage patient records.
-- Represent General, Emergency and Follow-Up patient categories.
-- Validate common patient details before creating records.
-- View patient information and appointment history.
+The screenshots below show the running Qt application using fictional demonstration data.
 
-### Appointment management
-- Schedule and manage patient appointments.
-- Track appointment states and pending work.
-- Keep appointment operations associated with patient records.
-
-### Waiting queue
-- Manage the consultation waiting list using first-in, first-out (FIFO) order.
-- Keep queue operations separate from the patient data model.
-
-### Search and sorting
-- Search patient records by ID, name or category.
-- Choose from linear, binary and recursive search where the current field and data order permit.
-- Sort by name, ID or age using manually implemented Selection Sort and Insertion Sort.
-- Display algorithm comparison and movement statistics in the application.
-
-### Dashboard and reports
-- View clinic summary information on the dashboard.
-- Generate reports covering frequently attended patients, pending appointments, patient-category distribution and daily appointment summaries.
-
-### Data and administration
-- Save and load application data in JSON format.
-- Export supported tabular information to CSV.
-- Manage clinic services and load demonstration data.
-- Use undo support for supported operations.
-
-## 🖼️ Screenshots
-
-Screenshots should show the application itself. The repository's screenshot assets will be linked here as they are added.
-
-| Application area | What it demonstrates |
+| Dashboard | Patient management |
 |---|---|
-| Dashboard | Clinic overview and navigation |
-| Patients | Patient registration and record management |
-| Appointments | Appointment creation and management |
-| Waiting queue | FIFO queue workflow |
-| Search and sorting | Search methods and sorting options |
-| Reports | Generated clinic summaries |
+| ![SCAPMS dashboard](screenshots/dashboard.png) | ![Patient management](screenshots/patients.png) |
+| **Appointment management** | **Waiting queue** |
+| ![Appointment management](screenshots/appointments.png) | ![Waiting queue](screenshots/wiaiting_queue.png) |
+| **Search and sorting** | **Reports** |
+| ![Search and sorting](screenshots/search_and_sort.png) | ![Reports](screenshots/reports.png) |
+| **Administration** | **Clinic services dialog** |
+| ![Administration](screenshots/admin.png) | ![Manage clinic services](screenshots/services.png) |
 
-> **Screenshot assets:** Add the verified application captures under `screenshots/` and link them here. No screenshot paths are assumed until the corresponding files are present in the repository.
+## Features
 
-## 📦 Downloads
+- **Patient records:** register and manage General, Emergency and Follow-Up patients.
+- **Appointments:** schedule appointments, associate them with patient records and manage appointment states.
+- **Waiting queue:** maintain consultation order using FIFO behaviour.
+- **Search:** use linear, binary or recursive search where supported by the selected field and current data order.
+- **Sorting:** sort patient records by name, ID or age using Selection Sort or Insertion Sort.
+- **Dashboard:** view patient, appointment and waiting-queue summaries.
+- **Reports:** review frequently attended patients, pending appointments, category distribution and daily appointment summaries.
+- **Data management:** save and load JSON data, export supported data to CSV, load fictional demo data and manage clinic services.
+- **Undo:** reverse supported operations.
 
-Pre-built application packages are published on the **[GitHub Releases page](https://github.com/botishbot/SCAPMS/releases)**. Open the latest release and download the package for your operating system.
+## Technology
 
-| Platform | Package | How to run |
+| Technology | Use |
+|---|---|
+| C++17 | Application logic and object-oriented implementation |
+| Qt 6 Widgets | Desktop interface, layouts, dialogs and event handling |
+| Qt Core | Application and data/file support |
+| CMake | Cross-platform configuration and build |
+| JSON | Persistent application data |
+| CSV | Data export |
+| C++ Standard Library | Containers and supporting utilities |
+| CTest | Automated test execution |
+| GitHub Actions | Windows and Linux build and release workflows |
+
+## Architecture and object-oriented design
+
+The application is organized into four principal namespaces:
+
+- `scapms::model` — patient, appointment, service and clinic database domain objects.
+- `scapms::controller` — application operations, queue and undo management, searching, sorting and report generation.
+- `scapms::gui` — Qt windows, pages, dialogs and user interaction.
+- `scapms::utils` — validation, identifiers, file handling and application exceptions.
+
+### Patient hierarchy
+
+`PatientRecord` is an abstract base class. The concrete patient types are:
+
+- `GeneralPatient`
+- `EmergencyPatient`
+- `FollowUpPatient`
+
+The hierarchy demonstrates abstraction, inheritance and runtime polymorphism. The `Appointable` abstraction represents appointment-related behaviour.
+
+### Main components
+
+- `Appointment` and `ClinicDatabase` represent appointment and clinic data.
+- `QueueManager` maintains the consultation queue.
+- `UndoManager` coordinates supported undo operations.
+- `SearchEngine` and `SortEngine` implement the searching and sorting methods.
+- `ReportGenerator` prepares clinic summaries.
+- Qt signals and slots connect GUI events to application operations.
+
+## Data structures and algorithms
+
+| Structure or algorithm | Application |
+|---|---|
+| `std::vector` | Variable-sized patient collection and working lists |
+| `std::queue` | First-in, first-out waiting queue |
+| `std::stack` | Last-in, first-out undo history |
+| Fixed-size array | Frequently accessed patient cache |
+| Linear Search | Search records without requiring sorted data |
+| Binary Search | Search supported fields when the list is correctly sorted |
+| Recursive Search | Search by recursively dividing the search range |
+| Selection Sort | Sort by repeatedly selecting the next record |
+| Insertion Sort | Sort by inserting each record into the sorted portion |
+
+The searching and sorting methods are implemented in the project rather than delegated to standard-library sorting or searching algorithms. The detailed explanation, pseudocode and complexity notes are in **[docs/ALGORITHMS.md](docs/ALGORITHMS.md)**.
+
+## Data storage
+
+Application data is stored as JSON (schema version 1) in the current user's application-data directory, separate from the executable and source tree. Users can choose another location through **Save As**. The application also supports CSV export.
+
+The waiting queue and undo history are runtime structures and are not persisted in the JSON data file. Use fictional or test data only.
+
+## Download a release
+
+**[Download SCAPMS v1.0.0](https://github.com/botishbot/SCAPMS/releases/tag/v1.0.0)**
+
+| Platform | Release package | Run |
 |---|---|---|
-| Windows 10/11, 64-bit | `SCAPMS-Windows-x64.zip` | Extract the ZIP and run `SCAPMS.exe`. Keep the included DLLs and Qt plugin folders beside the executable. |
-| Linux, x86_64 | `SCAPMS-Linux-x86_64.AppImage` | Make the file executable, then launch it. |
+| Windows 64-bit | [SCAPMS-Windows-x64.zip](https://github.com/botishbot/SCAPMS/releases/download/v1.0.0/SCAPMS-Windows-x64.zip) | Extract the archive and run `SCAPMS.exe`. Keep the bundled DLLs and Qt plugin folders beside it. |
+| Linux x86_64 | [SCAPMS-Linux-x86_64.AppImage](https://github.com/botishbot/SCAPMS/releases/download/v1.0.0/SCAPMS-Linux-x86_64.AppImage) | Make the AppImage executable and launch it. |
 
-### Linux AppImage
-
-After downloading the AppImage:
+Linux:
 
 ```bash
 chmod +x SCAPMS-Linux-x86_64.AppImage
 ./SCAPMS-Linux-x86_64.AppImage
 ```
 
-### Windows
-
-1. Download `SCAPMS-Windows-x64.zip` from the latest release.
-2. Extract the entire archive to a folder.
-3. Run `SCAPMS.exe`.
-4. Do not move the executable away from its bundled DLLs or Qt plugin directories.
-
-**Important:** A release asset will only be available after the corresponding GitHub Actions build has completed successfully. If a platform package is missing from a release, use the source-build instructions below or check the release's build status.
-
-## 🛠️ Technology stack
-
-- **C++17** — application logic and object-oriented implementation.
-- **Qt 6 Widgets** — desktop graphical user interface and event handling.
-- **CMake** — cross-platform project configuration and build system.
-- **Qt Core** — JSON/file-related support.
-- **JSON** — persistent application data.
-- **CSV** — data export.
-- **C++ Standard Library** — containers including `std::vector`, `std::queue` and `std::stack`.
-- **GitHub Actions** — automated build and release workflows.
-
-## 🚀 Getting started
+## Build from source
 
 ### Requirements
 
-To build the application from source, install:
+- C++17-compatible compiler
+- CMake 3.16 or newer
+- Qt 6 with Core and Widgets
+- Git
 
-- A C++17-compatible compiler.
-- CMake 3.16 or newer.
-- Qt 6 with the Core and Widgets components.
-- Git (to clone the repository).
+### Linux (Ubuntu/Debian)
 
-On Ubuntu/Debian-based Linux distributions, the basic dependencies can be installed with:
+Install dependencies:
 
 ```bash
 sudo apt update
 sudo apt install build-essential cmake qt6-base-dev
 ```
 
-### Get the source code
+Clone and build:
 
 ```bash
 git clone https://github.com/botishbot/SCAPMS.git
 cd SCAPMS
-```
-
-## 🔧 Building from source
-
-### Linux
-
-```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --parallel
 ./build/SCAPMS
@@ -159,7 +173,7 @@ cmake --build build --parallel
 
 ### Windows
 
-Install Visual Studio 2022 with the Desktop development with C++ workload, CMake and Qt 6. Open a developer terminal in the repository directory:
+Install Visual Studio 2022 with the **Desktop development with C++** workload, CMake and a compatible Qt 6 kit. From a developer terminal:
 
 ```powershell
 cmake -S . -B build -DCMAKE_PREFIX_PATH="C:/Qt/6.x.x/msvc2022_64"
@@ -167,163 +181,59 @@ cmake --build build --config Release --parallel
 .\build\Release\SCAPMS.exe
 ```
 
-Replace the Qt path with the actual location and version installed on your computer. The exact generator and Qt kit must use compatible compiler toolchains.
+Replace the example Qt path with the actual installation path. The Qt kit and compiler must use compatible toolchains.
 
-## 🧭 Using the application
+## Run tests
 
-On first launch, open **Administration** and select **Load demo data** to populate the application with fictional patient records, services and appointments. The repository also contains `data/sample_data.json`, which can be loaded through the application's file-loading option.
-
-The main areas of the application include:
-
-1. **Dashboard** — review clinic summary information.
-2. **Patients** — register and manage patient records.
-3. **Appointments** — schedule and manage appointments.
-4. **Waiting Queue** — manage the order in which patients are attended.
-5. **Search & Sort** — find records and arrange the working list.
-6. **Reports** — generate clinic activity summaries.
-7. **Administration** — manage services and data operations.
-
-Use fictional or test data only. The project has not been presented as a production-ready clinical records platform.
-
-## 🧱 Architecture and object-oriented design
-
-The code is organized into four principal namespaces:
-
-- `scapms::model` — patient, appointment, service and database domain objects.
-- `scapms::controller` — application operations, queue/undo management, searching, sorting and reports.
-- `scapms::gui` — Qt windows, pages and user interaction.
-- `scapms::utils` — validation, identifiers, file handling and application exceptions.
-
-### Patient class hierarchy
-
-`PatientRecord` is an abstract base class that contains common patient information and implements the `Appointable` abstraction. The concrete patient types are:
-
-- `GeneralPatient`
-- `EmergencyPatient`
-- `FollowUpPatient`
-
-Each concrete class provides its category-specific behaviour through the common abstraction. This demonstrates abstraction, inheritance and runtime polymorphism.
-
-### Main domain and application components
-
-- **Appointment** represents an appointment and its details.
-- **ClinicDatabase** manages patient and service data.
-- **QueueManager** manages the waiting queue.
-- **UndoManager** coordinates supported undo commands.
-- **SearchEngine** and **SortEngine** implement the required algorithms.
-- **ReportGenerator** prepares clinic summaries.
-- **MainWindow** and the GUI pages provide the Qt Widgets interface.
-
-Qt signals and slots connect user-interface events to application operations. The GUI uses controllers rather than taking direct ownership of the application's database logic.
-
-## 🧠 Data structures and algorithms
-
-The project includes hand-written searching and sorting algorithms. The detailed explanation, pseudocode, selection rationale and complexity discussion are available in **[docs/ALGORITHMS.md](docs/ALGORITHMS.md)**.
-
-| Structure / algorithm | Role in SCAPMS |
-|---|---|
-| `std::vector` | Stores the variable-sized patient collection and working lists. |
-| `std::queue` | Maintains the waiting list in FIFO order. |
-| `std::stack` | Stores undo commands in last-in, first-out order. |
-| Fixed array cache | Keeps a limited set of frequently accessed patient records. |
-| Linear Search | Searches records without requiring a particular list order. |
-| Binary Search | Searches an appropriately ordered list; the application restricts its use to valid sorted states and supported fields. |
-| Recursive Search | Divides the search range into smaller parts using recursive calls. |
-| Selection Sort | Repeatedly selects the next record in the required order. |
-| Insertion Sort | Inserts each record into its position in the already sorted portion. |
-
-The sorting options support name, ID and age. Search behaviour depends on the selected field and current sort state; the application does not treat binary search as valid on an unsorted list.
-
-## 💾 Data storage and validation
-
-Application data is stored in JSON (schema version 1) in the current user's application-data directory, separate from the executable, source code and download location. On Linux, this is typically under `~/.local/share/COS202/SCAPMS/`; on Windows, it is in the user's application-data location. The saved data includes patients and their appointments, clinic services, and appointment history for deleted patients. The waiting queue and undo history are runtime structures and are not saved as part of the JSON data file. Users can still choose another location through **Save As**.
-
-When data is loaded, the file is validated before replacing the current application data. Invalid JSON and invalid or inconsistent records are handled as errors; the documented loader is designed to leave the current data unchanged when validation fails.
-
-CSV export is provided for supported tabular data. Input validation and application exceptions are used to handle unsuitable values and invalid operations.
-
-## 📁 Project structure
-
-```text
-SCAPMS/
-├── CMakeLists.txt
-├── README.md
-├── include/
-│   ├── model/
-│   ├── controller/
-│   ├── gui/
-│   └── utils/
-├── src/
-│   ├── model/
-│   ├── controller/
-│   ├── gui/
-│   ├── utils/
-│   └── main.cpp
-├── resources/
-│   ├── resources.qrc
-│   └── style.qss
-├── data/
-│   └── sample_data.json
-├── tests/
-└── docs/
-    └── ALGORITHMS.md
-```
-
-| Directory | Responsibility |
-|---|---|
-| `include/` | Public application headers grouped by component. |
-| `src/model/` | Domain models and clinic data. |
-| `src/controller/` | Application operations and algorithms. |
-| `src/gui/` | Qt windows, pages and dialogs. |
-| `src/utils/` | Validation, exceptions, identifiers and file utilities. |
-| `resources/` | Qt resources and application styling. |
-| `data/` | Example JSON data. |
-| `tests/` | Automated test source files. |
-| `docs/` | Supporting technical documentation. |
-
-## 🧪 Testing
-
-The project includes a CMake/CTest test target. After configuring and building the project, run:
+After configuring and building:
 
 ```bash
 ctest --test-dir build --output-on-failure
 ```
 
-For a multi-configuration Windows build, build the test target in the desired configuration before running CTest:
+For a multi-configuration Windows build:
 
 ```powershell
 cmake --build build --config Release --target scapms_tests
 ctest --test-dir build -C Release --output-on-failure
 ```
 
-Test results should be checked for the specific build and platform being used; this README does not claim that every platform configuration has already passed.
+The tagged v1.0.0 GitHub Actions workflow completed successfully for both Windows x64 and Linux AppImage build/package jobs. The test command above lets contributors run the test suite in their own build environment.
 
-## 🤝 Contributing
+## Project structure
 
-Suggestions, bug reports and improvements are welcome.
+```text
+SCAPMS/
+├── .github/workflows/   # Automated build and release workflow
+├── data/                # Example JSON data
+├── docs/                # Technical documentation
+├── include/             # Application headers
+│   ├── controller/
+│   ├── gui/
+│   ├── model/
+│   └── utils/
+├── resources/           # Qt resources and stylesheet
+├── src/                 # Application implementation
+│   ├── controller/
+│   ├── gui/
+│   ├── model/
+│   └── utils/
+├── tests/               # Automated tests
+├── CMakeLists.txt
+└── README.md
+```
 
-1. Fork the repository.
-2. Create a focused feature or fix branch.
-3. Make and test your changes.
-4. Open a pull request describing the change and the checks performed.
+## Project notes
 
-Please avoid including real patient or other sensitive personal information in issues, screenshots, sample files or pull requests.
+- This repository is intended to demonstrate software development and programming concepts.
+- Demonstration data is fictional. Do not commit real patient or sensitive personal information.
+- No open-source licence is currently specified in the repository. Unless a licence is added, all rights are reserved; public visibility does not itself grant permission to reuse the code.
 
-## 📄 License
+## Author
 
-No license file was present when this README was updated. Until a license is added by the project owner, the repository should be treated as **all rights reserved**; do not assume that public visibility grants permission to redistribute or modify the code.
-
-## 👤 Author
-
-**BotishBot**
-
+**George Oluwasemilore**  
 GitHub: [@botishbot](https://github.com/botishbot)
-
-If you find the project useful, consider starring the repository.
 
 ---
 
-<p align="center">
-  <strong>SCAPMS</strong><br>
-  Smart Clinic Appointment & Patient Management System
-</p>
+<p align="center"><strong>SCAPMS</strong><br>Smart Clinic Appointment & Patient Management System</p>

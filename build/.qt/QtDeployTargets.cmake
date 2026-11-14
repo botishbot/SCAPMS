@@ -1,8 +1,0 @@
-set(__QT_DEPLOY_TARGET_scapms_core_FILE /home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/libscapms_core.a)
-set(__QT_DEPLOY_TARGET_scapms_core_TYPE STATIC_LIBRARY)
-set(__QT_DEPLOY_TARGET_scapms_io_FILE /home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/libscapms_io.a)
-set(__QT_DEPLOY_TARGET_scapms_io_TYPE STATIC_LIBRARY)
-set(__QT_DEPLOY_TARGET_SCAPMS_FILE /home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/SCAPMS)
-set(__QT_DEPLOY_TARGET_SCAPMS_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_scapms_tests_FILE /home/bot/Downloads/c++ pro/v2/SCAPMS_Drive_Folder/01_Source_Code/build/scapms_tests)
-set(__QT_DEPLOY_TARGET_scapms_tests_TYPE EXECUTABLE)
