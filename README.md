@@ -5,7 +5,7 @@
 ![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![Qt](https://img.shields.io/badge/Qt-6-41CD52?style=for-the-badge&logo=qt&logoColor=white)
 ![CMake](https://img.shields.io/badge/CMake-Build-064F8C?style=for-the-badge&logo=cmake&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-blue?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Not%20specified-lightgrey?style=for-the-badge)
 
 ---
@@ -92,7 +92,6 @@ Pre-built application packages are published on the **[GitHub Releases page](htt
 |---|---|---|
 | Windows 10/11, 64-bit | `SCAPMS-Windows-x64.zip` | Extract the ZIP and run `SCAPMS.exe`. Keep the included DLLs and Qt plugin folders beside the executable. |
 | Linux, x86_64 | `SCAPMS-Linux-x86_64.AppImage` | Make the file executable, then launch it. |
-| macOS | Release asset, when available | Follow the instructions attached to the corresponding release. |
 
 ### Linux AppImage
 
@@ -169,18 +168,6 @@ cmake --build build --config Release --parallel
 ```
 
 Replace the Qt path with the actual location and version installed on your computer. The exact generator and Qt kit must use compatible compiler toolchains.
-
-### macOS
-
-Install Xcode Command Line Tools, CMake and Qt 6. Configure CMake with the path to the installed Qt package:
-
-```bash
-cmake -S . -B build -DCMAKE_PREFIX_PATH="$(brew --prefix qt)"
-cmake --build build --config Release --parallel
-./build/SCAPMS
-```
-
-The macOS build instructions are provided as a source-build route; availability of a signed/notarized distributable depends on the release configuration.
 
 ## 🧭 Using the application
 
