@@ -310,9 +310,21 @@ void PatientPage::onCategoryChanged() { updateDynamicFields(); }
 // Dynamic components: show only the fields that belong to the selected patient type.
 void PatientPage::updateDynamicFields() {
     const auto cat = static_cast<PatientCategory>(m_category->currentData().toInt());
-    m_form->setRowVisible(m_triage, cat == PatientCategory::Emergency);
-    m_form->setRowVisible(m_prevVisit, cat == PatientCategory::FollowUp);
-    m_form->setRowVisible(m_reason, cat == PatientCategory::FollowUp);
+    // Hide both each field and its label for compatibility with Qt 6.2.
+    const bool emergency = cat == PatientCategory::Emergency;
+    const bool followUp = cat == PatientCategory::FollowUp;
+
+    if (QWidget* label = m_form->labelForField(m_triage))
+        label->setVisible(emergency);
+    m_triage->setVisible(emergency);
+
+    if (QWidget* label = m_form->labelForField(m_prevVisit))
+        label->setVisible(followUp);
+    m_prevVisit->setVisible(followUp);
+
+    if (QWidget* label = m_form->labelForField(m_reason))
+        label->setVisible(followUp);
+    m_reason->setVisible(followUp);
 }
 
 void PatientPage::updateButtons() {
