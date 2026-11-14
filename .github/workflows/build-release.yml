@@ -24,15 +24,15 @@ jobs:
           arch: win64_msvc2022_64
       - name: Configure
         shell: pwsh
-        run: cmake -S . -B build -A x64 "-DCMAKE_PREFIX_PATH=$env:QT_ROOT_DIR"
+        run: cmake -S . -B build-ci -A x64 "-DCMAKE_PREFIX_PATH=$env:QT_ROOT_DIR"
       - name: Build
-        run: cmake --build build --config Release --parallel
+        run: cmake --build build-ci --config Release --parallel
       - name: Test
-        run: ctest --test-dir build -C Release --output-on-failure
+        run: ctest --test-dir build-ci -C Release --output-on-failure
       - name: Deploy Qt runtime
         shell: pwsh
         run: |
-          $exe = (Resolve-Path "build/Release/SCAPMS.exe").Path
+          $exe = (Resolve-Path "build-ci/Release/SCAPMS.exe").Path
           New-Item -ItemType Directory -Force "package" | Out-Null
           windeployqt --release --compiler-runtime --dir "package" "$exe"
           Copy-Item "$exe" "package/SCAPMS.exe"
@@ -52,26 +52,19 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
+      - name: Install system dependencies and Qt
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake libfuse2 wget file desktop-file-utils
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: "6.8.3"
-          host: linux
-          target: desktop
-          arch: gcc_64
+          sudo apt-get install -y build-essential cmake qt6-base-dev qt6-base-dev-tools libfuse2 wget file desktop-file-utils
       - name: Configure, build and test
         run: |
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
-          cmake --build build --parallel
-          ctest --test-dir build --output-on-failure
+          cmake -S . -B build-ci -DCMAKE_BUILD_TYPE=Release
+          cmake --build build-ci --parallel
+          ctest --test-dir build-ci --output-on-failure
       - name: Prepare AppDir
         run: |
           mkdir -p AppDir/usr/bin AppDir/usr/share/applications AppDir/usr/share/icons/hicolor/scalable/apps
-          cp build/SCAPMS AppDir/usr/bin/SCAPMS
+          cp build-ci/SCAPMS AppDir/usr/bin/SCAPMS
           if [ -d data ]; then cp -r data AppDir/usr/bin/data; fi
           cat > AppDir/usr/share/applications/SCAPMS.desktop <<'EOF'
           [Desktop Entry]
@@ -94,7 +87,8 @@ jobs:
           wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O linuxdeploy-plugin-qt
           chmod +x linuxdeploy linuxdeploy-plugin-qt
           export PATH="$PWD:$PATH"
-          export QMAKE="$QT_ROOT_DIR/bin/qmake"
+          export QMAKE="$(command -v qmake6)"
+          export APPIMAGE_EXTRACT_AND_RUN=1
           ./linuxdeploy --appdir AppDir --plugin qt --output appimage
           mv SCAPMS-*.AppImage SCAPMS-Linux-x86_64.AppImage
       - uses: actions/upload-artifact@v4
@@ -117,13 +111,13 @@ jobs:
           arch: clang_64
       - name: Configure, build and test
         run: |
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
-          cmake --build build --parallel
-          ctest --test-dir build --output-on-failure
+          cmake -S . -B build-ci -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
+          cmake --build build-ci --parallel
+          ctest --test-dir build-ci --output-on-failure
       - name: Bundle Qt and create DMG
         run: |
-          macdeployqt build/SCAPMS.app -always-overwrite
-          hdiutil create -volname SCAPMS -srcfolder build/SCAPMS.app -ov -format UDZO SCAPMS-macOS.dmg
+          macdeployqt build-ci/SCAPMS.app -always-overwrite
+          hdiutil create -volname SCAPMS -srcfolder build-ci/SCAPMS.app -ov -format UDZO SCAPMS-macOS.dmg
       - uses: actions/upload-artifact@v4
         with:
           name: SCAPMS-macOS
