@@ -18,14 +18,10 @@ target_include_directories(scapms_core PUBLIC include)
 add_library(scapms_io STATIC src/utils/FileHandler.cpp)
 target_link_libraries(scapms_io PUBLIC scapms_core Qt6::Core)
 
-# GUI application. On macOS, create an application bundle so macdeployqt can package it.
+# GUI application
 file(GLOB GUI_SOURCES CONFIGURE_DEPENDS src/gui/*.cpp)
 file(GLOB GUI_HEADERS CONFIGURE_DEPENDS include/gui/*.h)
-if(APPLE)
-    add_executable(SCAPMS MACOSX_BUNDLE src/main.cpp ${GUI_SOURCES} ${GUI_HEADERS} resources/resources.qrc)
-else()
-    add_executable(SCAPMS src/main.cpp ${GUI_SOURCES} ${GUI_HEADERS} resources/resources.qrc)
-endif()
+add_executable(SCAPMS src/main.cpp ${GUI_SOURCES} ${GUI_HEADERS} resources/resources.qrc)
 target_link_libraries(SCAPMS PRIVATE scapms_io scapms_core Qt6::Widgets)
 
 # Unit tests (run with: ctest --test-dir build --output-on-failure)
