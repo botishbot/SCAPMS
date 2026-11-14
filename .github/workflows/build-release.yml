@@ -1,0 +1,147 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    name: Build Windows x64
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          host: windows
+          target: desktop
+          arch: win64_msvc2022_64
+      - name: Configure
+        shell: pwsh
+        run: cmake -S . -B build -A x64 "-DCMAKE_PREFIX_PATH=$env:QT_ROOT_DIR"
+      - name: Build
+        run: cmake --build build --config Release --parallel
+      - name: Test
+        run: ctest --test-dir build -C Release --output-on-failure
+      - name: Deploy Qt runtime
+        shell: pwsh
+        run: |
+          $exe = (Resolve-Path "build/Release/SCAPMS.exe").Path
+          New-Item -ItemType Directory -Force "package" | Out-Null
+          windeployqt --release --compiler-runtime --dir "package" "$exe"
+          Copy-Item "$exe" "package/SCAPMS.exe"
+          if (Test-Path "data") { Copy-Item "data" "package/data" -Recurse }
+          @("SCAPMS for Windows", "", "Extract the complete archive, then run SCAPMS.exe.", "Keep the included DLLs and Qt plugin folders beside the executable.") | Set-Content "package/README-WINDOWS.txt"
+      - name: Package
+        shell: pwsh
+        run: Compress-Archive -Path "package/*" -DestinationPath "SCAPMS-Windows-x64.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SCAPMS-Windows-x64
+          path: SCAPMS-Windows-x64.zip
+          if-no-files-found: error
+
+  linux:
+    name: Build Linux AppImage
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake libfuse2 wget file desktop-file-utils
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          host: linux
+          target: desktop
+          arch: gcc_64
+      - name: Configure, build and test
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
+          cmake --build build --parallel
+          ctest --test-dir build --output-on-failure
+      - name: Prepare AppDir
+        run: |
+          mkdir -p AppDir/usr/bin AppDir/usr/share/applications AppDir/usr/share/icons/hicolor/scalable/apps
+          cp build/SCAPMS AppDir/usr/bin/SCAPMS
+          if [ -d data ]; then cp -r data AppDir/usr/bin/data; fi
+          cat > AppDir/usr/share/applications/SCAPMS.desktop <<'EOF'
+          [Desktop Entry]
+          Type=Application
+          Name=SCAPMS
+          Comment=Smart Clinic Appointment and Patient Management System
+          Exec=SCAPMS
+          Icon=SCAPMS
+          Categories=Office;Education;
+          Terminal=false
+          EOF
+          cat > AppDir/usr/share/icons/hicolor/scalable/apps/SCAPMS.svg <<'EOF'
+          <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><rect width="128" height="128" rx="24" fill="#167C80"/><path d="M57 24h14v33h33v14H71v33H57V71H24V57h33z" fill="#fff"/></svg>
+          EOF
+          cp AppDir/usr/share/applications/SCAPMS.desktop AppDir/SCAPMS.desktop
+          cp AppDir/usr/share/icons/hicolor/scalable/apps/SCAPMS.svg AppDir/SCAPMS.svg
+      - name: Bundle Qt and create AppImage
+        run: |
+          wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O linuxdeploy
+          wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O linuxdeploy-plugin-qt
+          chmod +x linuxdeploy linuxdeploy-plugin-qt
+          export PATH="$PWD:$PATH"
+          export QMAKE="$QT_ROOT_DIR/bin/qmake"
+          ./linuxdeploy --appdir AppDir --plugin qt --output appimage
+          mv SCAPMS-*.AppImage SCAPMS-Linux-x86_64.AppImage
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SCAPMS-Linux-x86_64
+          path: SCAPMS-Linux-x86_64.AppImage
+          if-no-files-found: error
+
+  macos:
+    name: Build macOS DMG
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          host: mac
+          target: desktop
+          arch: clang_64
+      - name: Configure, build and test
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$QT_ROOT_DIR"
+          cmake --build build --parallel
+          ctest --test-dir build --output-on-failure
+      - name: Bundle Qt and create DMG
+        run: |
+          macdeployqt build/SCAPMS.app -always-overwrite
+          hdiutil create -volname SCAPMS -srcfolder build/SCAPMS.app -ov -format UDZO SCAPMS-macOS.dmg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SCAPMS-macOS
+          path: SCAPMS-macOS.dmg
+          if-no-files-found: error
+
+  release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    needs: [windows, linux, macos]
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+      - name: Publish release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: release-assets/*
