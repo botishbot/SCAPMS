@@ -45,7 +45,7 @@ The screenshots below show the running Qt application using fictional demonstrat
 |---|---|
 | ![SCAPMS dashboard](screenshots/dashboard.png) | ![Patient management](screenshots/patients.png) |
 | **Appointment management** | **Waiting queue** |
-| ![Appointment management](screenshots/appointments.png) | ![Waiting queue](screenshots/wiaiting_queue.png) |
+| ![Appointment management](screenshots/appointments.png) | ![Waiting queue](screenshots/waiting_queue.png) |
 | **Search and sorting** | **Reports** |
 | ![Search and sorting](screenshots/search_and_sort.png) | ![Reports](screenshots/reports.png) |
 | **Administration** | **Clinic services dialog** |
@@ -222,6 +222,12 @@ SCAPMS/
 ├── CMakeLists.txt
 └── README.md
 ```
+
+## Project documentation
+
+- [Three-page project report](docs/SCAPMS_Project_Report.pdf)
+- [UML class and architecture diagrams (PDF)](docs/SCAPMS_UML_Class_Diagrams.pdf)
+- [Algorithm explanations and complexity notes](docs/ALGORITHMS.md)
 
 ## Project notes
 
