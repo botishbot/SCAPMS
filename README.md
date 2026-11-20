@@ -26,7 +26,9 @@ A cross-platform desktop application built with **C++17, Qt 6 Widgets and CMake*
 - [Build from source](#build-from-source)
 - [Run tests](#run-tests)
 - [Project structure](#project-structure)
+- [Project documentation](#project-documentation)
 - [Project notes](#project-notes)
+- [License](#license)
 - [Author](#author)
 
 ## Overview
@@ -225,15 +227,42 @@ SCAPMS/
 
 ## Project documentation
 
-- [Three-page project report](docs/SCAPMS_Project_Report.pdf)
-- [UML class and architecture diagrams (PDF)](docs/SCAPMS_UML_Class_Diagrams.pdf)
 - [Algorithm explanations and complexity notes](docs/ALGORITHMS.md)
+
+### UML and architecture diagrams
+
+The following diagrams illustrate the main object model, controller/data-structure relationships and GUI architecture.
+
+<details>
+<summary>Object model and class relationships</summary>
+
+![SCAPMS object model](docs/diagrams/object_model.png)
+
+</details>
+
+<details>
+<summary>Controller and data structures</summary>
+
+![SCAPMS controller and data structures](docs/diagrams/controller_data_structures.png)
+
+</details>
+
+<details>
+<summary>GUI architecture</summary>
+
+![SCAPMS GUI architecture](docs/diagrams/gui_architecture.png)
+
+</details>
 
 ## Project notes
 
 - This repository is intended to demonstrate software development and programming concepts.
 - Demonstration data is fictional. Do not commit real patient or sensitive personal information.
 - No open-source licence is currently specified in the repository. Unless a licence is added, all rights are reserved; public visibility does not itself grant permission to reuse the code.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ## Author
 
