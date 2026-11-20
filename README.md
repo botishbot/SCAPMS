@@ -208,7 +208,9 @@ The tagged v1.0.0 GitHub Actions workflow completed successfully for both Window
 SCAPMS/
 ├── .github/workflows/   # Automated build and release workflow
 ├── data/                # Example JSON data
-├── docs/                # Technical documentation
+├── docs/                # Technical documentation and UML diagrams
+│   └── diagrams/
+├── screenshots/         # Application screenshots used in this README
 ├── include/             # Application headers
 │   ├── controller/
 │   ├── gui/
@@ -256,9 +258,9 @@ The following diagrams illustrate the main object model, controller/data-structu
 
 ## Project notes
 
-- This repository is intended to demonstrate software development and programming concepts.
+- This repository is a personal software development and portfolio project.
 - Demonstration data is fictional. Do not commit real patient or sensitive personal information.
-- No open-source licence is currently specified in the repository. Unless a licence is added, all rights are reserved; public visibility does not itself grant permission to reuse the code.
+- The project is provided under the MIT License; see [LICENSE](LICENSE) for the terms.
 
 ## License
 
